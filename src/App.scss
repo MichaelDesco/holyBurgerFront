@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image: url(../public/images/34.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+main{
+    height: 175vh;
+}
+
+h1,h2,h3,h4,h5,p{
+    background-color: transparent;
+}
+h2{
+    font-size: 1.4rem;
+}
+ul{
+    list-style: none;
+    padding-left: 0;
+}
+a{
+    text-decoration: none;
+    font-weight: bolder;
+}

@@ -1,0 +1,136 @@
+@font-face {
+    font-family: "Insanibu";
+    src: url("../../../../public/fonts/Insanibu.ttf");
+}
+
+.container-top{
+    display: flex;
+    justify-content: center;
+    
+    #section-top{
+        height: 90vh;
+        width: 85vw;
+        display: flex;
+        flex-direction: column;
+        border: 2px solid white;
+        border-radius: 25px;
+    
+        
+        .section-top-title{
+            border-radius: 5px;
+            background-color: transparent;
+            display: flex;
+            justify-content: center;
+    
+            h3{
+                height: 15vh;
+                width: 75vw;
+                color: #EE1D23;
+                text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+                border-radius: 3px;
+                font-family: "Insanibu";
+                font-size: 3rem;
+            }
+        }
+    
+        .section-top-categorie{
+            width: 85vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            background-color: transparent;
+            
+            
+            
+            .section-top-items{        
+                width: 80vw;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-around;
+                align-items: center;
+                background-color:transparent;
+                
+                .section-top-item{
+                    box-shadow: 8px 5px 10px grey;
+                    height: 70vh;
+                    width: 38vw;
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-evenly;
+                    background-color: rgba($color: #FAAF18, $alpha: 0.8);
+                    border: 3px solid white;
+                    border-radius: 10px;
+
+                    h4{
+                        color: white;
+                        text-shadow: 0 0 1px #ee1d23, 0 0 2px #ee1d23, 0 0 3px #ee1d23;
+                        font-size: 1.5rem;
+                    }
+                    
+                    .section-top-categorie-title{
+                        width: 350px;
+                        display: flex;
+                        flex-direction: column;
+                        text-align: center;
+                    }
+
+                    p{
+                        font-size: 0.8rem;
+                        text-align: center;    
+                    }
+                    a{
+                        text-decoration: none;
+                        color: #066330;
+                        font-size: 1rem;
+                        text-align: center;
+                        
+                    }
+                    .voir{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        background-color: rgba($color: #FBF3E4, $alpha: 0.8);
+                        height: 5vh;
+                        width: 10vw;
+                        border-radius: 5px;
+                        border: 2px solid w;
+                        box-shadow: 1px 1px 3px grey;
+                    }
+        
+                    .section-top-card{
+                        background-color: rgba($color: #FBF3E4, $alpha: 0.8);
+                        height: 45vh;
+                        width: 95%;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-evenly;
+                        border-radius: 10px;
+                        box-shadow: 8px 5px 10px grey;
+            
+                        h5{
+                            background-color: transparent;
+                            text-align: center;
+                            color: #066330;
+                        }
+            
+                        img{
+                            height: 35vh;
+                            width: 90%;
+                            border-radius: 10px;
+                        }
+                        .latin-blood{
+                            object-fit: cover;
+                            object-position: 0 80%;
+                        }
+                        .western-bacon{
+                            object-fit: cover;
+                            object-position: 0 40%;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

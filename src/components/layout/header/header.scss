@@ -1,0 +1,102 @@
+@font-face {
+    font-family: "Insanibu";
+    src: url("../../../../public/fonts/Insanibu.ttf");
+}
+
+header{
+    height: 30vh;
+    
+    #top-header{
+        height: 30vh;
+        display: flex;
+        flex-flow: row wrap;
+        align-items: space-between;
+    
+        .header-logo{
+            height: 27vh;
+            display: flex;
+            justify-content: flex-start;
+        }
+        #container-slogan-menu{
+            width: 57vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: flex-end;
+    
+            .slogan{
+                width: 68vw;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-end;
+                align-items: flex-end;
+                word-spacing: 4px;
+                
+    
+                h1{
+                    font-family: "Insanibu";
+                    color: #066330;
+                    font-size: 1.2rem;
+                    text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+                    font-weight: bold;
+                    letter-spacing: 3px;
+                }
+            }
+            .top-header-menu{
+                background-color: transparent;
+                width: 65vw;
+                display: flex;
+                justify-content: flex-end;
+
+                
+                a{
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    color: white;
+                    margin-left: 10px;
+                    font-family: "Insanibu";
+                    font-size: 1.3rem;
+                    text-shadow: 1px 1px #066330, -1px -1px #066330, 1px -1px #066330, -1px 1px #066330;
+                }
+                .btn-warning{
+                    background-color: rgba($color: #FAAF18, $alpha: 0.5);
+                    width:15vw;
+                    height: 15vh;
+                    border-radius: 8px;
+                    border: 4px solid white;
+                    
+                }
+                .btn-warning:hover{
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    height: 15vh;
+                    color: white;
+                    transition: opacity 500ms ease-in-out 0s;
+                }
+                .accueil:hover{
+                    background-image: url("../../../../public/images/giphy-home.gif");
+                }
+                .restaurant:hover{
+                    background-image: url("../../../../public/images/giphy-restaurant.gif");
+                }
+                .burger:hover{
+                    background-image: url("../../../../public/images/giphy-burger.gif");
+                }
+                .goodie:hover{
+                    background-image: url("../../../../public/images/giphy-goodies.gif");
+                }
+            }
+            @media screen and (max-width: 992px) {
+                #top-header{
+                    flex-direction: column;
+                }
+                .top-header-menu {
+                    flex-direction: column;
+                    align-items: flex-end;
+                }
+            }
+        }
+    }
+}
