@@ -1,10 +1,12 @@
 import Header from "../../layout/header/Header";
 import { useNavigate } from "react-router-dom";
+import React, { useState } from "react";
 
 import "./login.scss";
 
 const Login = () => {
     const navigate = useNavigate();
+    const [errorMessage, setErrorMessage] = useState("");
 
     const handleLogin = (e) => {
         e.preventDefault();
@@ -21,15 +23,21 @@ const Login = () => {
                 password: password,
             }),
         })
-        .then((dataJson) => dataJson.json())
+        .then((dataJson) => {
+            if (dataJson.ok) {
+                return dataJson.json();
+            } else {
+                throw new Error("Nom d'utilisateur ou mot de passe incorrect");
+            }
+        })
         .then((dataJs) => {
             localStorage.setItem("roles", dataJs.user.roles); 
-            // localStorage.setItem("user", JSON.stringify(dataJs.user));
-            // localStorage.setItem("id", dataJs.user.id); 
-            // localStorage.setItem("username", dataJs.user.username); 
             const jwt = dataJs.token;
             localStorage.setItem("jwt", jwt);
             navigate(`/users/${dataJs.user.id}`);
+        })
+        .catch((error) => {
+            setErrorMessage(error.message);
         });
     };
 
@@ -47,6 +55,7 @@ const Login = () => {
                             <input type="password" placeholder="Entrer votre mot de passe" name="password" required />
                         </div>
                         <button type="submit" id='submit'>Se connecter</button>
+                        {errorMessage && <p className="error-message">{errorMessage}</p>}
                     </form>
                 </div>
             </div>

@@ -6,18 +6,22 @@
 header{
     height: 30vh;
     
-    #top-header{
+    .top-header{
         height: 30vh;
         display: flex;
         flex-flow: row wrap;
         align-items: space-between;
+        @media(max-width: 992px){
+            // mettre les elements aux centres de la page
+            justify-content: space-between;
+        }
     
         .header-logo{
             height: 27vh;
             display: flex;
             justify-content: flex-start;
         }
-        #container-slogan-menu{
+        .container-slogan-menu{
             width: 57vw;
             display: flex;
             flex-direction: column;
@@ -31,7 +35,7 @@ header{
                 justify-content: flex-end;
                 align-items: flex-end;
                 word-spacing: 4px;
-                
+                white-space: wrap;
     
                 h1{
                     font-family: "Insanibu";
@@ -58,6 +62,10 @@ header{
                     font-family: "Insanibu";
                     font-size: 1.3rem;
                     text-shadow: 1px 1px #066330, -1px -1px #066330, 1px -1px #066330, -1px 1px #066330;
+
+                    @media (max-width: 992px){
+                        font-size: 1rem;
+                    }
                 }
                 .btn-warning{
                     background-color: rgba($color: #FAAF18, $alpha: 0.5);
@@ -65,6 +73,11 @@ header{
                     height: 15vh;
                     border-radius: 8px;
                     border: 4px solid white;
+
+                    @media (max-width: 576px){
+                        width: 40vw;
+                        height: 8vh;
+                    }
                     
                 }
                 .btn-warning:hover{
