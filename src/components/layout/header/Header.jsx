@@ -5,8 +5,10 @@ import "./header.scss";
 
 const Header = () => {
     const isAdmin = localStorage.getItem("roles")?.includes("admin");
-    const isUser = localStorage.getItem("roles")?.includes("restorer", "taster");
+    const isTaster = localStorage.getItem("roles")?.includes("taster");
+    const isRestorer = localStorage.getItem("roles")?.includes("restorer");
     const id = localStorage.getItem("id");
+    console.log(id);
     return (
         <header>
             <nav className="navbar navbar-expand-lg">
@@ -41,7 +43,14 @@ const Header = () => {
                                                 </Link>
                                             </li>
                                         )}
-                                        {isUser && (
+                                        {isTaster && (
+                                            <li className="nav-item">
+                                                <Link to={`/users/${id}`} className="nav-link btn btn-warning goodie">
+                                                    PROFIL
+                                                </Link>
+                                            </li>
+                                        )}
+                                        {isRestorer && (
                                             <li className="nav-item">
                                                 <Link to={`/users/${id}`} className="nav-link btn btn-warning goodie">
                                                     PROFIL

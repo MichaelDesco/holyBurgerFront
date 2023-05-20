@@ -8,7 +8,7 @@ const RestaurantBurgers = () => {
     const [burgers, setBurgers] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/restaurants/${id}/burgers`, {
+        fetch(`http://localhost:5001/api/restaurants/${id}/burgers`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -25,7 +25,6 @@ const RestaurantBurgers = () => {
                     <div key={burger.id}>
                         <h1>{burger.name}</h1>
                         {/* <img src={burger.picture} alt={burger.name} /> */}
-                        <p>{burger.description}</p>
                         <p>{burger.price}</p>
                     </div>
                 ))}

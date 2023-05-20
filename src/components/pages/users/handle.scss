@@ -10,6 +10,7 @@
         width: 60vw;
         display: flex;
         justify-content: space-around;
+        color: black;
         
         .form-items{
             width: 15vw;
@@ -17,6 +18,18 @@
             display: flex;
             flex-direction: column;
             align-items: space-around;
+
+            .restaurant-select {
+                width: 100%;
+                height: 100%;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+              
+            .restaurant-option {
+                padding: 8px;
+                height: 100%;
+            }     
         }
     }
 }

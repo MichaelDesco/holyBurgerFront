@@ -8,7 +8,7 @@ const Burgers = () => {
   const [searchValue, setSearchValue] = useState("");
 
   useEffect(() => {
-    let apiUrl = "http://localhost:5000/api/burgers";
+    let apiUrl = "http://localhost:5001/api/burgers";
     if (searchValue) {
         // encodeURIComponent() is used to encode special characters
       apiUrl += `?search=${encodeURIComponent(searchValue)}`;
@@ -47,14 +47,9 @@ const Burgers = () => {
                 </div>
                 <div className="description">
                   <h4>Ingrédients</h4>
-                  <h5>garnitures</h5>
                   <p>{burger.garniture}</p>
                   <p>{burger.fromage}</p>
-                  <p>{burger.legumes}</p>
-                  <h5>sauces</h5>
                   <p>{burger.sauce}</p>
-                  <h4>Description</h4>
-                  <p>la description du burger</p>
                 </div>
               </div>
             </div>

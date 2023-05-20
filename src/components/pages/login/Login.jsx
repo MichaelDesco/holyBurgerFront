@@ -13,7 +13,7 @@ const Login = () => {
         const username = e.target.username.value;
         const password = e.target.password.value;
 
-        fetch("http://localhost:5000/api/users/login", {
+        fetch("http://localhost:5001/api/users/login", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
@@ -31,7 +31,8 @@ const Login = () => {
             }
         })
         .then((dataJs) => {
-            localStorage.setItem("roles", dataJs.user.roles); 
+            localStorage.setItem("roles", dataJs.user.roles);
+            localStorage.setItem("id", dataJs.user.id); 
             const jwt = dataJs.token;
             localStorage.setItem("jwt", jwt);
             navigate(`/users/${dataJs.user.id}`);

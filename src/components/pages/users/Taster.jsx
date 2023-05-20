@@ -5,15 +5,15 @@ import { Link } from "react-router-dom";
 import "./profil.scss";
 
 const Taster = () => {
-  const { id } = useParams();
+  const { id, role } = useParams();
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/users/${id}`, {
+    fetch(`http://localhost:5001/api/users/${id}`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        "Authorization": `Bearer ${localStorage.getItem("jwt")} + ${localStorage.getItem("roles")}`,
       },
     })
       .then((response) => response.json())
@@ -21,7 +21,7 @@ const Taster = () => {
       .catch((error) => {
         console.error("Error fetching user:", error);
       });
-  }, [id]);
+  }, [id, role]);
 
   const handleLogOut = (event) => {
     event.preventDefault();
@@ -42,7 +42,7 @@ const Taster = () => {
               </div>
               <div className="description">
                 <h2>{user.username}</h2>
-                <p>{user.roles.join(", ")}</p>
+                <p>{user.roles}</p>
                 <p>{user.mail}</p>
               </div>
             </div>
@@ -68,3 +68,4 @@ const Taster = () => {
 };
 
 export default Taster;
+

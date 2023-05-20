@@ -10,12 +10,12 @@ const Restorer = () => {
   const [user, setUser] = useState(null);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/api/users/${id}`, {
+    fetch(`http://localhost:5001/api/users/${id}`, {
       method:"GET",
       headers: {
         "content-type": "application/json",
         // le token est envoyé au back pour vérifier l'authentification
-        "Authorization": `Bearer ${localStorage.getItem("jwt")}`,
+        "Authorization": `Bearer ${localStorage.getItem("jwt")} + ${localStorage.getItem("roles")}`,
 
       },
     })

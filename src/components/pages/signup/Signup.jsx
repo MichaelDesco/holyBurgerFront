@@ -10,7 +10,7 @@ const Signup = () => {
         const username = event.target.username.value;
         const password = event.target.password.value;
         const mail = event.target.mail.value;
-        fetch("http://localhost:5000/api/users/signup", {
+        fetch("http://localhost:5001/api/users/signup", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
