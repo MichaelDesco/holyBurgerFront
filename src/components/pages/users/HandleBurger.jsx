@@ -1,13 +1,12 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import Header from "../../layout/header/Header";
 import { useNavigate } from "react-router";
-import "./handle.scss"
-// import RestaurantSelect from "./RestaurantSelect";
-
+import "./handle.scss";
+import RestaurantSelect from "./RestaurantSelect";
 
 const HandleBurger = () => {
-
   const navigate = useNavigate();
+  const [selectedRestaurant, setSelectedRestaurant] = useState(null);
 
   useEffect(() => {
     if (!localStorage.getItem("jwt")) {
@@ -23,6 +22,7 @@ const HandleBurger = () => {
     const garniture = e.target.garniture.value;
     const fromage = e.target.fromage.value;
     const sauce = e.target.sauce.value;
+    const restaurantId = selectedRestaurant ? selectedRestaurant.id : null;
     
     fetch("http://localhost:5001/api/burgers", {
       method: "POST",
@@ -35,24 +35,26 @@ const HandleBurger = () => {
         price: price,
         garniture: garniture,
         fromage: fromage,
-        sauce: sauce
+        sauce: sauce,
+        RestaurantId: restaurantId
       }),
     })
       .then((dataJson) => dataJson.json())
       .then((dataJs) => {
         console.log(dataJs);
-        navigate("/burgers");
+        navigate("/restaurants/:id");
       })
       .catch((error) => console.log(error));
+  };
+
+  const handleRestaurantChange = (restaurant) => {
+    setSelectedRestaurant(restaurant);
   };
 
   return (
     <div>
       <Header />
-      <form 
-        className="handle" 
-        onSubmit={handleSubmit}
-      >
+      <form className="handle" onSubmit={handleSubmit}>
         <div className="form-group">
           <div className="form-items">
             <label>
@@ -63,7 +65,7 @@ const HandleBurger = () => {
               Prix
               <input type="number" name="price" />
             </label>
-            {/* <RestaurantSelect /> */}
+            <RestaurantSelect onChange={handleRestaurantChange} />
           </div>
           <div className="form-items">
             <label>
@@ -87,3 +89,4 @@ const HandleBurger = () => {
 };
 
 export default HandleBurger;
+

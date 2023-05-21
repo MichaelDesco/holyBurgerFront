@@ -1,10 +1,10 @@
 import { Link } from 'react-router-dom';
 import './login-signup.scss';
-import { useEffect } from 'react';
+import { useState, useEffect } from 'react';
 
 
 const LoginSignup = () => {
-    // const [isLogin, setIsLogin] = useState(false);
+    const [isLogin, setIsLogin] = useState(false);
 
     useEffect(() => {
         const token = localStorage.getItem("token");
@@ -18,7 +18,7 @@ const LoginSignup = () => {
             })
             .then((response) => response.json())
             .then((data) => {
-                // setIsLogin(true);
+                setIsLogin(true);
                 console.log(data);
             })
             .catch((error) => console.log(error));
@@ -34,7 +34,7 @@ const LoginSignup = () => {
                     </Link>
                 </div>    
                 <div className="container-btn-register">
-                    {/* {isLogin && */}
+                    {!isLogin &&
                         <div>
                             <Link to={"/login"} className= "login" >
                                 <div className="push">
@@ -46,7 +46,7 @@ const LoginSignup = () => {
                                 <p id='signup'>INSCRIPTION</p>
                             </Link>
                         </div>
-                    {/* } */}
+                    }
                 </div>
             </div>
         </div>

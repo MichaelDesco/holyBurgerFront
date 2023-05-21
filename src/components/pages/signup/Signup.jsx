@@ -1,8 +1,10 @@
 import Header from "../../layout/header/Header";
 import { useState } from "react";
+import { useNavigate } from "react-router";
 import "./signup.scss";
 
 const Signup = () => {
+    const navigate = useNavigate();
     const [isSignup, setIsSignup] = useState(false);
     const handleSignup = (event) => {
         event.preventDefault();
@@ -22,7 +24,11 @@ const Signup = () => {
                     mail: mail,
                     }),
             })
-            .then((dataJs) => (setIsSignup(true)))
+            .then((dataJson) => dataJson.json())
+            .then((dataJs) => {
+                setIsSignup(true);
+                navigate("/login");
+            })
         };
 
     return (

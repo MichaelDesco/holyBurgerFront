@@ -3,6 +3,8 @@ import React, { useState, useEffect } from "react";
 import Header from "../../layout/header/Header";
 import Footer from "../../layout/footer/Footer";
 
+import "./restaurant-burgers.scss";
+
 const RestaurantBurgers = () => {
     const { id } = useParams();
     const [burgers, setBurgers] = useState(null);
@@ -19,13 +21,26 @@ const RestaurantBurgers = () => {
     }, [id]);
 
     return (
-        <div>
+        <div className="component-burgers">
             <Header />
                 {burgers && burgers.map((burger) => (
                     <div key={burger.id}>
-                        <h1>{burger.name}</h1>
-                        {/* <img src={burger.picture} alt={burger.name} /> */}
-                        <p>{burger.price}</p>
+                        <div className="container-flexbox" key={burger.id}>
+                            <div className="container-burger">
+                                <div className="burger">
+                                <h3>{burger.name}</h3>
+                                <img className="imgBurger" src={burger.picture} alt={burger.name} />
+                                <p>{burger.cooker}</p>
+                                <p>{burger.RestaurantId.name}</p>
+                                </div>
+                                <div className="description">
+                                <h4>Ingrédients</h4>
+                                <p>{burger.garniture}</p>
+                                <p>{burger.fromage}</p>
+                                <p>{burger.sauce}</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 ))}
             <Footer />

@@ -20,7 +20,7 @@
 
     #main-header{
         width: 85vw;
-        border: 5px solid white;
+        border: 2px solid white;
         height: 65vh;
         border-radius: 30px;
         background-image: url(../../../../public/images/burgsurf2.jpg);
@@ -41,12 +41,12 @@
             background-color: transparent;
 
             .about{
-                color: white;
+                color: #EE1D23;
                 background-color: rgba($color: #FAAF18, $alpha: 0.8);
                 padding: 0.1rem 0.5rem;
                 border-radius: 5px;
-                text-shadow: 1px 1px #066330, -1px -1px #066330, 1px -1px #066330, -1px 1px #066330;
-                border: 3px solid white;
+                text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
+                border: 1px solid white;
                 text-decoration: none;
             }
         }
@@ -67,10 +67,10 @@
                 flex-direction: column;
                 justify-content: flex-end;
                 align-items: center;
-                width: 110px;
-                height: 110px;
+                width: 100px;
+                height: 100px;
                 border-radius: 50%;    
-                border: 3px solid white;
+                border: 2px solid white;
                 background-color: rgba($color: #FAAF18, $alpha: 0.8);
                 cursor: pointer;
                 text-decoration: none;
@@ -79,10 +79,10 @@
                 font-size: 1.8rem;
                 text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white, 0 0 5px white, 0 0 6px white;
                 font-family: "Insanibu";
-                line-height: 20px;
+                line-height: 15px;
 
                 .push{
-                    height: 12vh;
+                    height: 10vh;
                     width: 8vw;
                     text-align: center;
                     p{
@@ -96,9 +96,7 @@
             }
 
             .signup{
-                margin-top: 20px;
                 background-color: transparent;
-                line-height: 1px;
                 text-decoration: none;
 
                 #signup{
