@@ -2,164 +2,153 @@
     font-family: "Insanibu";
     src: url("../../../../public/fonts/Insanibu.ttf");
 }
+@font-face {
+    font-family: "Righteous";
+    src: url("../../../../public/fonts/Righteous-Regular.ttf");
+}
+header {
+    .container-fluid{
+        margin-top: 5vh;
 
-header{
-    height: 30vh;
-    width: 100%;
-    @media (max-width: 800px){
-        height: 45vh;
-        width: 100%;
-    }
-    nav{
-        .top-header{
-            height: 30vh;
-            display: flex;
-            align-items: space-between;
-            @media(max-width: 800px){
-                flex-direction: column;// mettre les elements aux centres de la page
+        .container{
+            width: 100%;
+            justify-content: space-around;
+            align-items: flex-end;
+            @media(max-width: 995px){
+                flex-direction: column;
                 align-items: center;
             }
-            
-            .div-logo{
-                display: flex;
-                width: 30vw;
-                .header-logo{
-                    height: 27vh;
-                    display: flex;
-                    @media(max-width: 800px){
-                        height: 27vh;
-                        margin-top: 10px;
-                    }
+            .logo {
+                img {
+                    height: 25vh;
                 }
             }
-            .container-slogan-menu{
-                width: 60vw;
-                display: flex;
-                flex-direction: column;
-                justify-content: space-evenly;
-                align-items: flex-end;
-                @media(max-width: 800px){
-                    width: 70%;
-                    flex-direction: column-reverse;
-                    align-items: center;
-                }
-        
-                .slogan{
-                    max-width: 60vw;
-                    display: flex;
-                    justify-content: flex-end;
-                    align-items: flex-end;
-                    word-spacing: 3px;
-                    white-space: wrap;
-        
-                    h1{
+            nav {
+                width: 70%;
+                justify-content: flex-end;
+                @media(max-width: 995px){
+                    justify-content: center;
+                    align-items: flex-start;
+                    .navbar-toggler:focus{
+                        background-color: transparent;
+                        border: none;
+                        font-size: 1.5rem;
                         font-family: "Insanibu";
                         color: #066330;
-                        font-size: 1.1rem;
-                        text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
-                        font-weight: bold;
-                        letter-spacing: 2px;
-                        text-align: center;
-                    }
-                    @media(max-width: 800px){
-                        width: 100%;
-                        justify-content: center;
-                        align-items: center;
-                        h1{
-                            font-size: 0.9rem;
-                            text-align: center;
-                        }
+                        text-shadow: 0 0 5px white;
                     }
                 }
-                .nav-css{
-                    display: flex;
-                    justify-content: flex-end;
-                    .btn-responsive{
-                        .top-header-menu{
-                            background-color: transparent;
-                            width: 65vw;
-                            display: flex;
-                            justify-content: flex-end;
-        
+                
+                .custom{
+                    height: 10vh;
+                    border: none;
+                    background-color: transparent;
+                    font-family: "Insanibu";
+                    text-shadow: 0 0 5px #FAAF18;
+                    color: #066330;
+                }
+                .div-menu {
+                    width: 70%;
+                    @media(max-width:995px){
+                        // margin-top: 15vh;
+                        width:100%
+                    }
+                    ul {
+                        width: 100%;
+                        @media(max-width: 995px){
+
+                        }
+                        li {
                             
                             a{
-                                display: flex;
-                                justify-content: center;
-                                align-items: center;
-                                color: white;
-                                margin-left: 10px;
+                                text-align: center;
                                 font-family: "Insanibu";
+                                color: white;
                                 font-size: 1.3rem;
-                                text-shadow: 1px 1px #066330, -1px -1px #066330, 1px -1px #066330, -1px 1px #066330;
-        
-                                @media (max-width: 800px){
+                                text-shadow: 3px 3px 5px #066330;
+                                @media(max-width: 995px){
                                     font-size: 1rem;
                                 }
                             }
-                            .btn-warning{
-                                background-color: rgba($color: #FAAF18, $alpha: 0.5);
-                                width:14vw;
-                                height: 14vh;
-                                border-radius: 6px;
-                                border: 2px solid white;
-        
-                                @media (max-width: 576px){
-                                    width: 40vw;
-                                    height: 8vh;
+                            a:hover{
+                                text-shadow: 2px 2px 3px #FAAF18;
+                            }
+                            width: 20%;
+                            @media(max-width: 995px){
+                                width:50%;
+                                button{
+                                    border: none;
                                 }
-                                
+                                .btn{
+                                    background-color: transparent;
+                                    border: none;
+                                    color: #066330;
+                                    font-size: 1.5rem;
+                                    font-family: "Insanibu";
+                                }
                             }
-                            .btn-warning:hover{
-                                background-size: cover;
-                                background-position: center;
-                                background-repeat: no-repeat;
-                                height: 14vh;
-                                color: white;
-                                transition: opacity 500ms ease-in-out 0s;
-                            }
-                            .accueil:hover{
-                                background-image: url("../../../../public/images/giphy-home.gif");
-                            }
-                            .restaurant:hover{
-                                background-image: url("../../../../public/images/giphy-restaurant.gif");
-                            }
-                            .burger:hover{
-                                background-image: url("../../../../public/images/giphy-burger.gif");
-                            }
-                            .goodie:hover{
-                                background-image: url("../../../../public/images/giphy-goodies.gif");
+                            @media(min-width: 995px){
+                                .btn {
+                                    padding: 1.8rem 0;
+                                    border: 1px solid white;
+                                    box-shadow: 0.5px 0.5px 10px #066330;  
+
+                                }
+                                .btn-warning:hover {
+                                    background-size: cover;
+                                    background-position: center;
+                                    background-repeat: no-repeat;
+                                    color: white;
+                                    transition: opacity 500ms ease-in-out 0s;
+                                    box-shadow: none;
+                                    border: 1px solid #066330;
+                                }
+        
+                                .accueil:hover {
+                                    background-image: url("../../../../public/images/giphy-home.gif");
+                                }
+        
+                                .restaurant:hover {
+                                    background-image: url("../../../../public/images/giphy-restaurant.gif");
+                                }
+        
+                                .burger:hover {
+                                    background-image: url("../../../../public/images/giphy-burger.gif");
+                                }
+        
+                                .goodie:hover {
+                                    background-image: url("../../../../public/images/giphy-goodies.gif");
+                                }
                             }
                         }
-                        @media (max-width: 800px){
-                            justify-content: center;
-                        }
-                    }
-                    .custom{
-                        background-color: #FAAF18;
-                        border: none;
-                        border-radius: 2px;
-                    }
-                    .custom:hover{
-                        background-color: #FAAF18;
-                        border: none;
-                        border-radius: 2px;
                     }
                 }
-                // @media screen and (max-width: 992px) {
-                    // #top-header{
-                    //     flex-direction: column;
-                    // }
-                    // .top-header-menu {
-                    //     flex-direction: column;
-                    //     align-items: flex-end;
-                    // }
-                // }
             }
-        }
-        @media (max-width: 800px){
-            flex-direction: column;
-            align-items: center;
         }
     }
 }
-
+.slogan{
+    width: 100%;
+    text-align: right;
+    font-family: "Righteous";
+    color: #066330;
+    height : 2vh;
+    h1{
+        width: 90%;
+        text-align: center;
+        font-size: 1.7rem;
+        text-shadow: 1px 1px 3px #FAAF18;
+        @media(max-width: 995px){
+            font-size: 1.5rem;
+        }
+        @media(max-width: 767px){
+            font-size: 1.2rem;
+        }
+        @media(max-width: 575px){
+            font-size: 0.8rem;
+        }
+        @media(max-width: 400px){
+            font-size: 0.6rem;
+        }
+    }
+}

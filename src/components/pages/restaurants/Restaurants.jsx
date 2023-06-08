@@ -3,6 +3,8 @@ import Footer from "../../layout/footer/Footer";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./restaurants.scss";
+import SpaceBetweenSection from "../../layout/space-between/SpaceBetweenSection";
+import SpaceBetweenItem from "../../layout/space-between/SpaceBetweenItem";
 
 const Restaurants = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -21,15 +23,21 @@ const Restaurants = () => {
   }, []);
 
   return (
-    <div className="component-burgers">
+    <>
       <Header />
+      <SpaceBetweenItem />
       {restaurants.map((restaurant) => (
         <div className="container-flexbox" key={restaurant.id}>
           <div className="container-burger">
             <div className="burger">
-              <h3>{restaurant.name}</h3>
-              <img className="imgRestaurant" src={restaurant.picture} alt={restaurant.name} />
-              <Link to={`/restaurants/${restaurant.id}`} className="linkBurger">Voir les burgers</Link>
+              <h3>🍔{restaurant.name}🍔</h3>
+              <img className="imgRestaurant"
+                src={restaurant.picture}
+                alt={restaurant.name} 
+              />
+              <Link to={`/restaurants/${restaurant.id}`}
+                className="linkBurger">Voir les burgers
+              </Link>
             </div>
             <div className="description">
               <h4>Adresse</h4>
@@ -44,10 +52,10 @@ const Restaurants = () => {
           </div>
         </div>
       ))}
+      <SpaceBetweenSection />
       <Footer />
-    </div>
+    </>
   );
 };
 
 export default Restaurants;
-

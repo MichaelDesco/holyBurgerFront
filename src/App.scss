@@ -4,14 +4,12 @@
     box-sizing: border-box;
 }
 body{
-    background-image: url(../public/images/34.png);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
-
-main{
-    height: 175vh;
+    // background-image: url(../public/images/34.png);
+    // background-repeat: no-repeat;
+    // background-size: cover;
+    // background-position: center;
+    box-shadow:  inset 0px 0px 50px 20px #FAAF18; 
+                
 }
 
 h1,h2,h3,h4,h5,p{

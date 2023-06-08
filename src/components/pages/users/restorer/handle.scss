@@ -1,0 +1,44 @@
+.handle{
+    height: 70vh;
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    .form-group{
+        height: 40vh;
+        width: 60vw;
+        display: flex;
+        justify-content: space-evenly;
+        color: black;
+        
+        .form-items{
+            width: 15vw;
+            height: 35vh;
+            display: flex;
+            flex-direction: column;
+            align-items: space-around;
+
+            .restaurant-select {
+                width: 100%;
+                border: 1px solid #ccc;
+                border-radius: 4px;
+            }
+              
+            .restaurant-option {
+                padding: 8px;
+                height: 100%;
+            }     
+        }
+    }
+    .btn-custom{
+        color:#066330;
+        border:1px solid #FAAF18;
+        background-color: white;
+        width: 5rem;
+        border-radius: 2px;
+        box-shadow: 0 0 3px 0 #FAAF18;
+        font-size: 1.2rem;
+        font-weight: bolder;
+    }
+}

@@ -7,8 +7,7 @@ const Footer = () => {
         <footer id="footer">
             <img className="logo-footer" src={holyBurgerLogo} alt="logo" />
             <div className="developpement">
-                <p>Développeur Descorcier Michaël</p>
-                <p>© 2023 Holy Burger</p>
+                <p>Descorcier Michaël © 2023 Holy Burger</p>
             </div>
         </footer>
     );

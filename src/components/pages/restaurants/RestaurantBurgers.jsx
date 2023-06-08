@@ -17,7 +17,7 @@ const RestaurantBurgers = () => {
             }
         })
         .then((dataJson) => dataJson.json())
-        .then((dataJs) => setBurgers(dataJs.data)); 
+        .then((dataJs) => setBurgers(dataJs.data));
     }, [id]);
 
     return (
@@ -28,7 +28,7 @@ const RestaurantBurgers = () => {
                         <div className="container-flexbox" key={burger.id}>
                             <div className="container-burger">
                                 <div className="burger">
-                                <h3>{burger.name}</h3>
+                                <h3>🍔{burger.name}🍔</h3>
                                 <img className="imgBurger" src={burger.picture} alt={burger.name} />
                                 <p>{burger.cooker}</p>
                                 <p>{burger.RestaurantId.name}</p>

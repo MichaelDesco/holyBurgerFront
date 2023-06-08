@@ -4,13 +4,12 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 70vh;
+        height: 65vh;
         .container-burger{
-            background-color: rgba($color: #FAAF18, $alpha: 0.5);
-            border: 5px solid white;
+            // background-color: rgba($color: #FAAF18, $alpha: 0.5);
             border-radius: 30px;
             width: 85vw;
-            height: 60vh;
+            height: 55vh;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
@@ -21,7 +20,7 @@
                 line-height: 8px;
             }
             .burger{
-                background-color: rgba($color: #FBF3E4, $alpha: 0.8);
+                // background-color: rgba($color: #FBF3E4, $alpha: 0.8);
                 border-radius: 10px;
                 width: 35vw;
                 height: 50vh;

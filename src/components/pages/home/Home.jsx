@@ -1,55 +1,108 @@
-import LoginSignup from "./LoginSignup";
 import Header from "../../layout/header/Header";
-import Footer from "../../layout/footer/Footer";
-import SpaceBetweenSection from "../../layout/space-between/SpaceBetweenSection";
+import Register from "../../layout/register/Register";
 import SpaceBetweenItem from "../../layout/space-between/SpaceBetweenItem";
+import SpaceBetweenSection from "../../layout/space-between/SpaceBetweenSection";
+import Footer from "../../layout/footer/Footer";
 import "./home.scss";
+import { useEffect, useState } from "react";
+import { Helmet } from 'react-helmet';
 
 
 const Home = () => {
+    const [randomRestaurant, setRandomRestaurant] = useState(null);
+    useEffect(() => {
+        fetch("http://localhost:5001/api/restaurants/random", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setRandomRestaurant(data.data);
+            });
+    }, []);
+    console.log(randomRestaurant);
+
+    const [randomBurger, setRandomBurger] = useState(null);
+    useEffect(() => {
+        fetch("http://localhost:5001/api/burgers/random", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        })
+            .then((response) => response.json())
+            .then((data) => {
+                setRandomBurger(data.data);
+            });
+    }, []);
+    console.log(randomBurger);
+
 
     return (
-        <div>
+        <>
+            <Helmet>
+                <title>HOLY·Burger🍔</title>
+            </Helmet>
             <Header />
-            <LoginSignup />
-            <SpaceBetweenSection />
-            <div className="container-top">
-                <div id="section-top">
-                    <div className="section-top-title">
-                        <h3>HOLY NEWS</h3>
-                    </div>
-                    <div className="section-top-categorie">
-                        <div className="section-top-items">
-                            <div className="section-top-item">
-                                <h4 className="section-top-categorie-title">HOLY RESTAURANT</h4>
-                                <p>Découvrez le restaurant favori de la communauté !</p>
-                                <div className="section-top-card">
-                                    <h5>SUNNY BURGER</h5>
-                                    <img className="latin-blood" src="./images/latin-blood.jpg" alt="latin blood"/>
-                                </div>
-                                <div className="voir">
-                                    <a href="#header">+ de restaurant</a>
-                                </div>
-                            </div>
-                            <div className="section-top-item">
-                                <h4 className="section-top-categorie-title">HOLY BURGER</h4>
-                                <p>Découvrez le burger du moment choisi par la communauté.</p>
-                                <div className="section-top-card">
-                                    <h5>LE FUEGO INFERNO</h5>
-                                    <img className="western-bacon" src="./images/western-bacon.jpg" alt="western bacon"/>
-                                </div>
-                                <div className="voir">
-                                    <a  href="#header">+ de burgers</a>
-                                </div>
+            <SpaceBetweenItem />
+            <main>
+                <Register />
+                <SpaceBetweenSection />
+                <div className="container-top">
+                    <div id="section-top">
+                        <div className="section-top-title">
+                            <h3>HOLY DAY'S</h3>
+                        </div>
+                        <div className="section-top-categorie">
+                            <div className="section-top-items">
+                                {(randomRestaurant) ?
+                                    (
+                                        <div className="section-top-item right">
+                                            <h4 className="section-top-categorie-title">HOLY RESTAURANT</h4>
+                                            <div className="section-top-card">
+                                                <h5>{randomRestaurant.name}</h5>
+                                                <img className="img-restaurant" src={randomRestaurant.picture} alt={randomRestaurant.name} />
+                                            </div>
+                                            <div className="voir">
+                                                <a href="#header">+ de restaurant</a>
+                                            </div>
+                                        </div>
+                                    )
+                                    :
+                                    (
+                                        <p>chargement...</p>
+                                    )
+                                }
+                                {(randomBurger) ?
+                                    (
+                                        <div className="section-top-item left">
+                                            <h4 className="section-top-categorie-title">HOLY BURGER</h4>
+                                            <div className="section-top-card">
+                                                <h5>{randomBurger.name}</h5>
+                                                <img className="img-burger" src={randomBurger.picture} alt={randomBurger.name} />
+                                            </div>
+                                            <div className="voir">
+                                                <a href="#header">+ de burgers</a>
+                                            </div>
+                                        </div>
+                                    )
+                                    :
+                                    (
+                                        <p>chargement...</p>
+                                    )
+                                }
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <SpaceBetweenItem />
+                <SpaceBetweenSection />
+            </main>
             <Footer />
-        </div>
+        </>
     );
 }
 
 export default Home;
+

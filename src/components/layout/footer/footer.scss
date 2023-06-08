@@ -1,21 +1,22 @@
 #footer{
-    height: 40vh;
+    height: 30vh;
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
+
     .logo-footer{
         height: 16vh;
+        margin-bottom: 1vh;
     }
 
     .developpement{
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
+        justify-content: flex-start;
         text-align: center;
         p{
-            color: white;
+            color: #066330;
             line-height: 10px;
         }
     }

@@ -1,0 +1,153 @@
+@font-face {
+    font-family: "Insanibu";
+    src: url("../../../../public/fonts/Insanibu.ttf");
+}
+@font-face {
+    font-family: "Righteous";
+    src: url("../../../../public/fonts/Righteous-Regular.ttf");
+}
+
+  //================================================\\
+ //==============LOGIN-SIGNUP-SECTION================\\
+//====================================================\\
+
+.container-login-signup{
+    width: 100%;
+    height: 65vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @media(max-width: 992px){
+        height: 45vh;
+    }
+    @media(max-width: 768px){
+        height: 35vh;
+    }
+
+    #main-header{
+        width: 85vw;
+        border: 1px solid white;
+        height: 55vh;
+        border-radius: 30px;
+        background-image: url(../../../../public/images/burgsurf2.jpg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        box-shadow: 1px 1px 5px #066330;
+        @media(max-width: 992px){
+            height: 40vh;
+        }
+        @media(max-width: 768px){
+            height: 30vh;
+            background-position-x: 65%;
+            flex-direction: column-reverse;
+            align-items: flex-end;
+            justify-content: space-around;
+        }
+
+        .container-about{
+            width: 30vw;
+            height: 45vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            background-color: transparent;
+            @media(max-width: 992px){
+                height: 25vh;
+            }
+            @media(max-width: 768px){
+                height: 10vh;
+                width: 40vw;
+                justify-content: flex-end;
+            }
+
+            .about{
+                color: #EE1D23;
+                background-color: rgba($color: #FAAF18, $alpha: 0.8);
+                padding: 0.1rem 0.5rem;
+                border-radius: 5px;
+                text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
+                border: 1px solid white;
+                text-decoration: none;
+                font-family: "Righteous";
+                font-size: 0.9rem;
+            }
+        }
+
+        .container-btn-register{
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 30vw;
+            height: 45vh;
+            font-family: "Insanibu";
+            color: #EE1D23;
+            background-color: transparent;
+            @media(max-width: 992px){
+                height: 25vh;
+            }
+            @media(max-width: 768px){
+                height: 10vh;
+                width: 32vw;
+            }
+
+            .login{
+                width: 20vw;
+                height: 20vh;
+                cursor: pointer;
+                text-decoration: none;
+                line-height: 0px;
+                .push{    
+                    padding: 1rem 0.5rem;
+                    border-radius: 50%;
+                    border: 1px solid white;
+                    text-align: center;
+                    background-color: rgba(#FAAF18, $alpha: 0.8);
+                    box-shadow: 2px 2px 5px #066330;
+                    h2{
+                        color: #ee1d23;
+                        font-weight: bolder;
+                        font-size: 1.5rem;
+                        text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
+                        font-family: "Insanibu";
+                    }
+                    p{
+                        color: #066330;
+                        font-size: 0.8rem;
+                        font-weight: bold;
+                        font-family: "Righteous";
+                        white-space: nowrap;
+                        text-align: center;
+                    }
+                }
+
+            }
+
+            .signup{
+                background-color: transparent;
+                text-decoration: none;
+
+                p{
+                    cursor: pointer;
+                    color: #ee1d23;
+                    font-weight: bolder;
+                    font-size: 1.2rem;
+                    text-shadow:0 0 3px white, 2px 2px 5px #066330;
+                    color: #066330;
+                    font-size: 1rem;
+                    font-weight: bold;
+                    font-family: "Righteous";
+                    white-space: nowrap;
+                    text-align: center;
+                    font-family: "Insanibu";
+                    text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
+                }
+            }
+        }
+    }
+}
