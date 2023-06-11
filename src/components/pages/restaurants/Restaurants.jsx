@@ -2,6 +2,7 @@ import Header from "../../layout/header/Header";
 import Footer from "../../layout/footer/Footer";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 import "./restaurants.scss";
 import SpaceBetweenSection from "../../layout/space-between/SpaceBetweenSection";
 import SpaceBetweenItem from "../../layout/space-between/SpaceBetweenItem";
@@ -24,6 +25,9 @@ const Restaurants = () => {
 
   return (
     <>
+      <Helmet>
+        <title>HOLY·Restaurants</title>
+      </Helmet>
       <Header />
       <SpaceBetweenItem />
       {restaurants.map((restaurant) => (

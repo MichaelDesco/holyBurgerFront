@@ -1,29 +1,9 @@
 import { Link } from 'react-router-dom';
 import './register.scss';
-import { useState, useEffect } from 'react';
 
 
 const Register = () => {
-    const [isLogin, setIsLogin] = useState(false);
-
-    useEffect(() => {
-        const token = localStorage.getItem("jwt");
-        if (token) {
-            fetch("http://localhost:5001/api/users/", {
-                method: "GET",
-                headers: {
-                    "Content-Type": "application/json",
-                    "Authorization": `Bearer ${token}`,
-                },
-            })
-            .then((response) => response.json())
-            .then((data) => {
-                setIsLogin(true);
-                console.log(data);
-            })
-            .catch((error) => console.log(error));
-        }
-    },)
+    const role = localStorage.getItem("roles");
 
     return (
         <div className='container-login-signup'>
@@ -34,7 +14,7 @@ const Register = () => {
                     </Link>
                 </div>    
                 <div className="container-btn-register">
-                    {!isLogin &&
+                    {!role ? (
                         <div>
                             <Link to={"/login"} className= "login" >
                                 <div className="push">
@@ -46,6 +26,11 @@ const Register = () => {
                                 <p>INSCRIPTION</p>
                             </Link>
                         </div>
+                        ) : (
+                        <div>
+                            <p>Vous êtes bien connectez !</p>
+                        </div>
+                        )
                     }
                 </div>
             </div>

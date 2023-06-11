@@ -13,10 +13,10 @@ const ProfilRestorer = () => {
       method: "GET",
       headers: {
         "content-type": "application/json",
-        Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        "Authorization": `Bearer ${localStorage.getItem("jwt")} ${localStorage.getItem("roles")}`,
       },
     })
-      .then((res) => res.json())
+      .then((response) => response.json())
       .then((data) => setUser(data.data))
       .catch((error) => {
         console.error("Erreur lors de la récupération de l'utilisateur:", error);
@@ -43,7 +43,7 @@ const ProfilRestorer = () => {
               <div className="description">
                 <h2>{user.username}</h2>
                 <p>{user.roles}</p>
-                <p>{user.mail.slice(0, user.mail.indexOf("@"))}@*</p>
+                <p>{user.mail}</p>
               </div>
             </div>
             <div className="usernav">

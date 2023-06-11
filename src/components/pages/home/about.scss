@@ -3,30 +3,15 @@
     src: url("../../../../public/fonts/Righteous-Regular.ttf");
 }
 
-.container-presentation{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 68vh;
-    #presentation{
-        height: 55vh;
-        width: 85vw;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-    
-        .introduction{
-            box-shadow: 1em 1em 20px white, -1em -1em 20px white, -1em 1em 20px white, 1em -1em 20px white;
-            background-color: white;
-            height: 40vh;
-            width: 74vw;
-        }
-        p{
-            color: #066330;
-            background-color: transparent;
-            font-family: "Righteous";
-            font-size: 0.95rem;
-        }
-    }
+p{
+    color: #066330;
+    background-color: transparent;
+    font-family: "Righteous";
+    font-size: 0.9rem
+}
+
+.about-content {
+  @media (max-width: 995px) {
+    height: auto;
+  }
 }

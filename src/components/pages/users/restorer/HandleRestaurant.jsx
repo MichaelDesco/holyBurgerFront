@@ -1,11 +1,12 @@
 import React, { useEffect } from "react";
-import Header from "../../../layout/header/Header";
 import { useNavigate } from "react-router";
+import Header from "../../../layout/header/Header";
 import "./handle.scss"
 
 
 const HandleRestaurant = () => {
   const navigate = useNavigate();
+  const token = localStorage.getItem("jwt");
 
   useEffect(() => {
     if (!localStorage.getItem("jwt")) {
@@ -24,12 +25,11 @@ const HandleRestaurant = () => {
     const postCode = e.target.postCode.value;
     const city = e.target.city.value;
 
-
     fetch("http://localhost:5001/api/restaurants", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${localStorage.getItem("jwt")}  ${localStorage.getItem("roles")}`,
+        "Authorization": `Bearer ${token}  ${localStorage.getItem("roles")}`,
       },
       body: JSON.stringify({
         name: name,
@@ -42,9 +42,9 @@ const HandleRestaurant = () => {
         userId: localStorage.getItem("id"),
       }),
     })
-      .then((dataJson) => dataJson.json())
-      .then((dataJs) => {
-        console.log(dataJs);
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
         navigate("/restaurants");
       })
       .catch((error) => console.log(error));

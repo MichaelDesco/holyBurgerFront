@@ -32,11 +32,13 @@ header {
                     .navbar-toggler:focus{
                         background-color: transparent;
                         border: none;
-                        font-size: 1.5rem;
                         font-family: "Insanibu";
                         color: #066330;
                         text-shadow: 0 0 5px white;
                     }
+                }
+                @media(max-width: 400px){
+                    width: 100%;
                 }
                 
                 .custom{
@@ -48,11 +50,6 @@ header {
                     color: #066330;
                 }
                 .div-menu {
-                    width: 70%;
-                    @media(max-width:995px){
-                        // margin-top: 15vh;
-                        width:100%
-                    }
                     ul {
                         width: 100%;
                         @media(max-width: 995px){
@@ -66,8 +63,11 @@ header {
                                 color: white;
                                 font-size: 1.3rem;
                                 text-shadow: 3px 3px 5px #066330;
-                                @media(max-width: 995px){
-                                    font-size: 1rem;
+                                @media(max-width: 996px){
+                                    font-size: 1.1rem;
+                                }
+                                @media(max-width: 400px){
+                                    font-size: 0.9rem;
                                 }
                             }
                             a:hover{
@@ -83,7 +83,6 @@ header {
                                     background-color: transparent;
                                     border: none;
                                     color: #066330;
-                                    font-size: 1.5rem;
                                     font-family: "Insanibu";
                                 }
                             }
@@ -128,15 +127,21 @@ header {
     }
 }
 .slogan{
-    width: 100%;
+    width: 86%;
+    height: 2vh;
+    margin-bottom: 1vh;
+    justify-content: flex-end;
     text-align: right;
     font-family: "Righteous";
     color: #066330;
-    height : 2vh;
+    @media(max-width: 995px){
+        width: 100%;
+        justify-content: center;
+    }
     h1{
-        width: 90%;
+        padding: 2% 0;;
         text-align: center;
-        font-size: 1.7rem;
+        font-size: 1.3rem;
         text-shadow: 1px 1px 3px #FAAF18;
         @media(max-width: 995px){
             font-size: 1.5rem;
@@ -148,7 +153,7 @@ header {
             font-size: 0.8rem;
         }
         @media(max-width: 400px){
-            font-size: 0.6rem;
+            font-size: 0.5rem;
         }
     }
 }

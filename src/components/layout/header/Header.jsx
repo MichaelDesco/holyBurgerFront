@@ -3,7 +3,6 @@ import holyBurgerLogo from "./holy-burger-logo.png"; // Importez l'image
 import "./header.scss";
 
 const Header = () => {
-  const isAdmin = localStorage.getItem("roles")?.includes("admin");
   const isTaster = localStorage.getItem("roles")?.includes("goûteur");
   const isRestorer = localStorage.getItem("roles")?.includes("restaurateur");
   const id = localStorage.getItem("id");
@@ -47,13 +46,6 @@ const Header = () => {
                       RESTAURANT
                     </Link>
                   </li>
-                  {isAdmin && (
-                    <li className="nav-item menu-link">
-                      <Link to="/admin" className="nav-link btn btn-warning goodie">
-                        ADMIN
-                      </Link>
-                    </li>
-                  )}
                   {isTaster && (
                     <li className="nav-item">
                       <Link to={`/users/${id}`} className="nav-link btn btn-warning goodie">
@@ -74,7 +66,7 @@ const Header = () => {
           </div>
         </section>
       </header>
-      <div className="slogan d-flex justify-content-center">
+      <div className="slogan d-flex">
         <h1>« Devenez un mordu de burger grâce à nos bons plans ! »</h1>
       </div>
     </>

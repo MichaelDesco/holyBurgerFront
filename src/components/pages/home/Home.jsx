@@ -6,6 +6,7 @@ import Footer from "../../layout/footer/Footer";
 import "./home.scss";
 import { useEffect, useState } from "react";
 import { Helmet } from 'react-helmet';
+import { Link } from "react-router-dom";
 
 
 const Home = () => {
@@ -43,7 +44,7 @@ const Home = () => {
     return (
         <>
             <Helmet>
-                <title>HOLY·Burger🍔</title>
+                <title>🍔 Holy·Burger 🍔</title>
             </Helmet>
             <Header />
             <SpaceBetweenItem />
@@ -66,7 +67,7 @@ const Home = () => {
                                                 <img className="img-restaurant" src={randomRestaurant.picture} alt={randomRestaurant.name} />
                                             </div>
                                             <div className="voir">
-                                                <a href="#header">+ de restaurant</a>
+                                                <Link to={"/restaurants"}>+ de restaurant</Link>
                                             </div>
                                         </div>
                                     )
@@ -84,7 +85,7 @@ const Home = () => {
                                                 <img className="img-burger" src={randomBurger.picture} alt={randomBurger.name} />
                                             </div>
                                             <div className="voir">
-                                                <a href="#header">+ de burgers</a>
+                                                <Link to={"/burgers"} >+ de burgers</Link>
                                             </div>
                                         </div>
                                     )

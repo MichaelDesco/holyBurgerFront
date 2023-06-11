@@ -21,12 +21,10 @@ const HandleBurger = () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${token} ${localStorage.getItem("roles")}`,
       },
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("fetchByuser", data);
         const userRestaurants = data.data.filter(restaurant => restaurant.UserId === Number(id));
         setRestaurants(userRestaurants);
       })
@@ -42,7 +40,6 @@ const HandleBurger = () => {
     const sauce = e.target.sauce.value;
     const restaurantId = e.target.restaurant.value;
 
-    console.log("token", token);
     fetch("http://localhost:5001/api/burgers", {
       method: "POST",
       headers: {

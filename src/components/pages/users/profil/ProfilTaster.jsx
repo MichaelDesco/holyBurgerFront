@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import "./profil.scss";
 
 const ProfilTaster = () => {
+  
   const { id, role } = useParams();
   const [user, setUser] = useState(null);
 
@@ -13,7 +14,7 @@ const ProfilTaster = () => {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${localStorage.getItem("jwt")} + ${localStorage.getItem("roles")}`,
+        "Authorization": `Bearer ${localStorage.getItem("jwt")} ${localStorage.getItem("roles")}`,
       },
     })
       .then((response) => response.json())
