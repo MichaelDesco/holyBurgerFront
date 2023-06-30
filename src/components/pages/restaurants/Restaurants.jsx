@@ -4,8 +4,6 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import "./restaurants.scss";
-import SpaceBetweenSection from "../../layout/space-between/SpaceBetweenSection";
-import SpaceBetweenItem from "../../layout/space-between/SpaceBetweenItem";
 
 const Restaurants = () => {
   const [restaurants, setRestaurants] = useState([]);
@@ -29,7 +27,6 @@ const Restaurants = () => {
         <title>HOLY·Restaurants</title>
       </Helmet>
       <Header />
-      <SpaceBetweenItem />
       {restaurants.map((restaurant) => (
         <div className="container-flexbox" key={restaurant.id}>
           <div className="container-burger">
@@ -56,7 +53,6 @@ const Restaurants = () => {
           </div>
         </div>
       ))}
-      <SpaceBetweenSection />
       <Footer />
     </>
   );

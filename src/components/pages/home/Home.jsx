@@ -1,7 +1,5 @@
 import Header from "../../layout/header/Header";
 import Register from "../../layout/register/Register";
-import SpaceBetweenItem from "../../layout/space-between/SpaceBetweenItem";
-import SpaceBetweenSection from "../../layout/space-between/SpaceBetweenSection";
 import Footer from "../../layout/footer/Footer";
 import "./home.scss";
 import { useEffect, useState } from "react";
@@ -47,10 +45,8 @@ const Home = () => {
                 <title>🍔 Holy·Burger 🍔</title>
             </Helmet>
             <Header />
-            <SpaceBetweenItem />
             <main>
                 <Register />
-                <SpaceBetweenSection />
                 <div className="container-top">
                     <div id="section-top">
                         <div className="section-top-title">
@@ -98,7 +94,6 @@ const Home = () => {
                         </div>
                     </div>
                 </div>
-                <SpaceBetweenSection />
             </main>
             <Footer />
         </>

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "Righteous";
+    src: url("../../../../public/fonts/Righteous-Regular.ttf");
+}
+
 #footer{
     height: 30vh;
     display: flex;
@@ -16,8 +21,9 @@
         justify-content: flex-start;
         text-align: center;
         p{
-            color: #066330;
+            color: #FAAF18;
             line-height: 10px;
+            font-family: "Righteous";
         }
     }
         

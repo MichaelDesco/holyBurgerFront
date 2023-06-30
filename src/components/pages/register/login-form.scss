@@ -3,55 +3,60 @@
     src: url("../../../../public/fonts/Righteous-Regular.ttf");
 }
 
-.container-login{
-    
-    height: 67vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    
-    #login{
-        width: 85vw;
-        height: 68vh;
-        text-align: center;
-        border-radius: 30px;
+.login-form{
+    height: 100vh;
+    .container-login{
+        width: 100%;
         display: flex;
-        flex-direction: column;
         justify-content: center;
         align-items: center;
-
-        form{
-            // background-color: rgba($color: #FAAF18, $alpha: 0.5);
-            height: 40vh;
-            width: 40vw;
-            border-radius: 20px;
-            border: 5px solid white;
+        
+        #login{
+            width: 85vw;
+            height: 100%;
+            text-align: center;
+            border-radius: 30px;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            justify-content: space-around;
-            .id-password{
+    
+            form{
+                // background-color: rgba($color: #FAAF18, $alpha: 0.5);
+                height: 50vh;
+                width: 40vw;
                 display: flex;
                 flex-direction: column;
-            }
-            input{
-                width: 30vw;
-                border: 1px solid #FAAF18;
-                border-radius: 5px;
-                font-size: 1rem;
-                font-family: "Righteous";
-                text-align: center;
-            }
-            #submit{
-                width: 10vw;
-                border: 2px solid white;
-                border-radius: 5px;
-                font-size: 1.2rem;
-                font-family: "Righteous";
-                background-color: #FAAF18;
-                color: white;
-                cursor: pointer;
+                align-items: center;
+                justify-content: space-around;
+                .id-password{
+                    height: 20vh;
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    label{
+                        display: flex;
+                        flex-direction: column;
+                    }
+                }
+                input{
+                    width: 30vw;
+                    border: 1px solid #FAAF18;
+                    border-radius: 5px;
+                    font-size: 1rem;
+                    font-family: "Righteous";
+                    text-align: center;
+                }
+                #submit{
+                    width: 10vw;
+                    border: 2px solid white;
+                    border-radius: 5px;
+                    font-size: 1.2rem;
+                    font-family: "Righteous";
+                    background-color: #FAAF18;
+                    color: white;
+                    cursor: pointer;
+                }
             }
         }
     }

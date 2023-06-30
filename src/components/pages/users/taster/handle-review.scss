@@ -1,0 +1,24 @@
+@font-face {
+    font-family: "Righteous";
+    src: url("../../../../../public/fonts/Righteous-Regular.ttf");
+}
+.container-review{
+    color: #066330;
+    font-family: "Righteous";
+    background-color: rgba($color: #FBF3E4, $alpha: 0.8);
+    margin: 2rem auto;
+    width: 85vw;
+    height: 40vh;
+    display: flex;
+    justify-content: space-around;
+    border-radius: 8px;
+    .review-burger, .review{
+        display: flex;
+        flex-direction: column;
+        margin-top: auto;
+        margin-bottom: auto;
+        img{
+            width: 20vw;
+        }
+    }
+}

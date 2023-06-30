@@ -31,6 +31,7 @@ const LoginForm = () => {
         })
         .then((dataJs) => {
             localStorage.setItem("roles", dataJs.user.roles);
+            localStorage.setItem("username", dataJs.user.username);
             localStorage.setItem("id", dataJs.user.id); 
             localStorage.setItem("jwt", dataJs.token);
             navigate(`/users/${dataJs.user.id}`);
@@ -41,17 +42,19 @@ const LoginForm = () => {
     };
 
     return (
-        <div>
+        <div className="login-form">
             <Header />
             <div className="container-login">
                 <div id="login">
                     <form  onSubmit={handleLogin}>
                         <h2>Se Connecter</h2>
                         <div className="id-password">
-                            <label><b>Nom d'utilisateur</b></label>
-                            <input type="text" placeholder="Entrer votre identifiant" name="username" required />
-                            <label><b>Mot de passe</b></label>
-                            <input type="password" placeholder="Entrer votre mot de passe" name="password" required />
+                            <label><b>Nom d'utilisateur</b>
+                                <input type="text" placeholder="Entrer votre identifiant" name="username" required />
+                            </label>
+                            <label><b>Mot de passe</b>
+                                <input type="password" placeholder="Entrer votre mot de passe" name="password" required />
+                            </label>
                         </div>
                         <button type="submit" id='submit'>Se connecter</button>
                         {errorMessage && <p className="error-message">{errorMessage}</p>}

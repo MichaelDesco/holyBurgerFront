@@ -4,24 +4,50 @@
         flex-direction: column;
         justify-content: center;
         align-items: center;
-        height: 65vh;
+        min-height: 55vh;
         .container-burger{
-            // background-color: rgba($color: #FAAF18, $alpha: 0.5);
             border-radius: 30px;
             width: 85vw;
-            height: 55vh;
+            min-height: 55vh;
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            h3, h4{
+            .review-btn{
+                display: flex;
+                h3{
+                    color: #066330;
+                    font-size: 1.4rem;
+                    font-family: "Righteous";
+                    // span{
+                        //     margin-left: 0.1rem;
+                        //     font-size: 0.5rem;
+                        //     .star-svg{
+                            //         width: 20px;
+                            //         height: 20px;
+                            //     }
+                            // }
+                }
+                button{
+                    background-color: transparent;
+                    border: none;
+                    font-size: 1rem;
+                    margin-bottom: 0.5rem;
+                    margin-left: 1rem;
+                    text-decoration: underline;
+                    color: #ee1d23;
+                    font-family: "Righteous";
+                }
+            }
+            h4{
                 color: #066330;
+                font-family: "Righteous";
             }
             p{
+                color: #FAAF18;
+                font-family: "Righteous";
                 line-height: 8px;
             }
             .burger{
-                // background-color: rgba($color: #FBF3E4, $alpha: 0.8);
-                border-radius: 10px;
                 width: 35vw;
                 height: 50vh;
                 display: flex;
@@ -60,6 +86,35 @@
                 justify-content: center;
                 align-items: center;
                 
+            }
+        }
+        label{
+            height: 20vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            .textarea{
+                width: 70vw;
+            }
+            .review-send{
+                width: 70vw;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                .style-module_tooltip__tKc3i{
+                    background-color: #066330;
+                    font-family: "Righteous";
+                }
+                button{
+                    border: none;
+                    background-color: #FAAF18;
+                    color: #066330;
+                    padding: 0.2rem 1rem;
+                    border-radius: 3px;
+                    font-family: "Righteous";
+                    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.75);
+                }
             }
         }
     }

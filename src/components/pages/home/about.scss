@@ -1,17 +1,24 @@
 @font-face {
-    font-family: "Righteous";
-    src: url("../../../../public/fonts/Righteous-Regular.ttf");
+  font-family: "Righteous";
+  src: url("../../../../public/fonts/Righteous-Regular.ttf");
 }
-
-p{
-    color: #066330;
-    background-color: transparent;
-    font-family: "Righteous";
-    font-size: 0.9rem
-}
-
-.about-content {
-  @media (max-width: 995px) {
-    height: auto;
+.about {
+  height: 100vh;
+  .container-about{
+    height: 64%;
+    .about-content {
+      padding: 4rem 4rem;
+      @media (max-width: 995px) {
+        height: auto;
+      }
+    }
+    p{
+        color: #066330;
+        background-color: transparent;
+        font-family: "Righteous";
+        font-size: 0.9rem;
+        text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
+    }
   }
 }
+

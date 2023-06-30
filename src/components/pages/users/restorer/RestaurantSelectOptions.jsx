@@ -4,24 +4,25 @@ const RestaurantSelectOptions = ({ onChange, userId }) => {
   const [restaurants, setRestaurants] = useState([]);
 
   useEffect(() => {
-    const fetchRestaurants = async () => {
-      try {
-        const response = await fetch(`http://localhost:5001/api/users/${userId}/restaurants`, {
-          method: "GET",
-          headers: {
-            "Content-Type": "application/json",
-            Authorization: `Bearer ${localStorage.getItem("jwt")}`,
-          },
+    const fetchRestaurants = () => {
+      fetch(`http://localhost:5001/api/users/${userId}/restaurants`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((data) => {
+          if (Array.isArray(data.data)) {
+            setRestaurants(data.data);
+          } else {
+            console.log("Invalid data format", data);
+          }
+        })
+        .catch((error) => {
+          console.log("Error fetching restaurants", error);
         });
-        const data = await response.json();
-        if (Array.isArray(data.data)) {
-          setRestaurants(data.data);
-        } else {
-          console.log("Invalid data format", data);
-        }
-      } catch (error) {
-        console.log("Error fetching restaurants", error);
-      }
     };
 
     fetchRestaurants();
@@ -43,4 +44,5 @@ const RestaurantSelectOptions = ({ onChange, userId }) => {
 };
 
 export default RestaurantSelectOptions;
+
 

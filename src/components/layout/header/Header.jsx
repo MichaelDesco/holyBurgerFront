@@ -9,15 +9,14 @@ const Header = () => {
 
   return (
     <>
-      <header className="d-flex justify-content-center align-items-center">
-        <section class="container-fluid d-flex justify-content-center align-items-center">
-          <div class="container d-flex d-row">
-            <div className="logo">
+      <header className="d-flex ">
+        <section class="container-fluid d-flex ">
+          <div class="container d-flex d-row ">
+            <div className="logo d-flex  align-items-center">
               {/* Utilisez la variable holyBurgerLogo comme source de l'image */}
               <img className="navbar-brand" src={holyBurgerLogo} alt="logo" />
-              
             </div>
-            <nav className="navbar navbar-expand-lg d-flex ">
+            <nav className="navbar navbar-expand-lg d-flex align-items-end">
               <button
                 className="navbar-toggler btn custom"
                 type="button"
@@ -29,34 +28,34 @@ const Header = () => {
               >
                 <span className="btn btn-warning">Menu</span>
               </button>
-              <div className="collapse navbar-collapse div-menu" id="navbarNav">
-                <ul className="navbar-nav menu d-flex justify-content-evenly align-items-center">
-                  <li className="nav-item menu-link">
+              <div className="collapse navbar-collapse menu" id="navbarNav">
+                <ul className="navbar-nav">
+                  <li className="nav-item">
                     <Link to={"/"} className="nav-link btn btn-warning accueil" aria-current="page">
                       ACCUEIL
                     </Link>
                   </li>
                   <li className="nav-item menu-link">
-                    <Link to={"/burgers"} className="nav-link btn btn-warning burger">
+                    <Link to={"/burgers"} className="nav-link btn btn-warning restaurant">
                       BURGER
                     </Link>
                   </li>
                   <li className="nav-item menu-link">
-                    <Link to={"/restaurants"} className="nav-link btn btn-warning restaurant">
+                    <Link to={"/restaurants"} className="nav-link btn btn-warning burger">
                       RESTAURANT
                     </Link>
                   </li>
                   {isTaster && (
                     <li className="nav-item">
-                      <Link to={`/users/${id}`} className="nav-link btn btn-warning goodie">
-                      PROFIL🍔
+                      <Link to={`/users/${id}`} className="nav-link btn btn-warning profil">
+                        PROFIL🍔
                       </Link>
                     </li>
                   )}
                   {isRestorer && (
                     <li className="nav-item">
-                      <Link to={`/users/${id}`} className="nav-link btn btn-warning goodie">
-                      PROFIL🍔
+                      <Link to={`/users/${id}`} className="nav-link btn btn-warning profil">
+                        PROFIL🍔
                       </Link>
                     </li>
                   )}
@@ -66,9 +65,6 @@ const Header = () => {
           </div>
         </section>
       </header>
-      <div className="slogan d-flex">
-        <h1>« Devenez un mordu de burger grâce à nos bons plans ! »</h1>
-      </div>
     </>
   );
 };

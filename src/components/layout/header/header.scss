@@ -2,158 +2,106 @@
     font-family: "Insanibu";
     src: url("../../../../public/fonts/Insanibu.ttf");
 }
+
 @font-face {
     font-family: "Righteous";
     src: url("../../../../public/fonts/Righteous-Regular.ttf");
 }
+
 header {
-    .container-fluid{
-        margin-top: 5vh;
+    .container {
+        width: 90%;
+        margin-top: 3%;
+        margin-bottom: 2%;
 
-        .container{
+        @media screen and (max-width: 995px) {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .logo {
+            width: 30%;
+
+            img {
+                height: 25vh;
+            }
+        }
+
+        nav {
+            width: 80%;
+            @media screen and (max-width: 995px) {
+                justify-content: center;
+                width: none;
+            }
+        }
+
+        .menu {
             width: 100%;
-            justify-content: space-around;
-            align-items: flex-end;
-            @media(max-width: 995px){
-                flex-direction: column;
-                align-items: center;
-            }
-            .logo {
-                img {
-                    height: 25vh;
-                }
-            }
-            nav {
-                width: 70%;
+            @media screen and (min-width: 995px) {
+                display: flex;
                 justify-content: flex-end;
-                @media(max-width: 995px){
-                    justify-content: center;
-                    align-items: flex-start;
-                    .navbar-toggler:focus{
-                        background-color: transparent;
+            }
+            ul {
+                width: 100%;
+                display: flex;
+                justify-content: space-between;
+                @media screen and (max-width: 995px) {
+                    align-items: center;
+                }
+
+                a {
+                    width: 15vw;
+                    padding: 1.8rem 0;
+                    border: 1px solid white;
+                    box-shadow: 1px 1px 5px #066330;
+                    font-family: "Insanibu";
+                    color: white;
+                    font-size: 1.3rem;
+                    text-shadow: 3px 3px 5px #066330;
+                    background-size: cover;
+                    background-position: center;
+                    background-repeat: no-repeat;
+                    @media screen and (max-width: 995px) {
+                        text-align: center;
                         border: none;
-                        font-family: "Insanibu";
-                        color: #066330;
-                        text-shadow: 0 0 5px white;
+                        background-color: transparent;
+                        box-shadow: none;
+                        padding: 0.5rem 0;
                     }
                 }
-                @media(max-width: 400px){
-                    width: 100%;
-                }
-                
-                .custom{
-                    height: 10vh;
-                    border: none;
-                    background-color: transparent;
-                    font-family: "Insanibu";
-                    text-shadow: 0 0 5px #FAAF18;
-                    color: #066330;
-                }
-                .div-menu {
-                    ul {
-                        width: 100%;
-                        @media(max-width: 995px){
 
-                        }
-                        li {
-                            
-                            a{
-                                text-align: center;
-                                font-family: "Insanibu";
-                                color: white;
-                                font-size: 1.3rem;
-                                text-shadow: 3px 3px 5px #066330;
-                                @media(max-width: 996px){
-                                    font-size: 1.1rem;
-                                }
-                                @media(max-width: 400px){
-                                    font-size: 0.9rem;
-                                }
-                            }
-                            a:hover{
-                                text-shadow: 2px 2px 3px #FAAF18;
-                            }
-                            width: 20%;
-                            @media(max-width: 995px){
-                                width:50%;
-                                button{
-                                    border: none;
-                                }
-                                .btn{
-                                    background-color: transparent;
-                                    border: none;
-                                    color: #066330;
-                                    font-family: "Insanibu";
-                                }
-                            }
-                            @media(min-width: 995px){
-                                .btn {
-                                    padding: 1.8rem 0;
-                                    border: 1px solid white;
-                                    box-shadow: 0.5px 0.5px 10px #066330;  
+                a:hover {
+                    @media screen and (min-width: 995px) {
+                        background-image: none;
+                        text-shadow: 2px 2px 3px #FAAF18;
+                        border: 1px solid white;
+                        box-shadow: 2px 2px 10px #FAAF18;
+                    }
+                }
+                .accueil:hover {
+                    @media screen and (min-width: 995px) {
+                    background-image: url("../../../../public/images/giphy-home.gif");
+                    }               
+                }
 
-                                }
-                                .btn-warning:hover {
-                                    background-size: cover;
-                                    background-position: center;
-                                    background-repeat: no-repeat;
-                                    color: white;
-                                    transition: opacity 500ms ease-in-out 0s;
-                                    box-shadow: none;
-                                    border: 1px solid #066330;
-                                }
-        
-                                .accueil:hover {
-                                    background-image: url("../../../../public/images/giphy-home.gif");
-                                }
-        
-                                .restaurant:hover {
-                                    background-image: url("../../../../public/images/giphy-restaurant.gif");
-                                }
-        
-                                .burger:hover {
-                                    background-image: url("../../../../public/images/giphy-burger.gif");
-                                }
-        
-                                .goodie:hover {
-                                    background-image: url("../../../../public/images/giphy-goodies.gif");
-                                }
-                            }
-                        }
+                .restaurant:hover {
+                    @media screen and (min-width: 995px) {
+                    background-image: url("../../../../public/images/giphy-restaurant.gif");
+                    }
+                }
+
+                .burger:hover {
+                    @media screen and (min-width: 995px) {
+                    background-image: url("../../../../public/images/giphy-burger.gif");
+                    }
+                }
+
+                .profil:hover {
+                    @media screen and (min-width: 995px) {
+                    background-image: url("../../../../public/images/giphy-goodies.gif");
                     }
                 }
             }
-        }
-    }
-}
-.slogan{
-    width: 86%;
-    height: 2vh;
-    margin-bottom: 1vh;
-    justify-content: flex-end;
-    text-align: right;
-    font-family: "Righteous";
-    color: #066330;
-    @media(max-width: 995px){
-        width: 100%;
-        justify-content: center;
-    }
-    h1{
-        padding: 2% 0;;
-        text-align: center;
-        font-size: 1.3rem;
-        text-shadow: 1px 1px 3px #FAAF18;
-        @media(max-width: 995px){
-            font-size: 1.5rem;
-        }
-        @media(max-width: 767px){
-            font-size: 1.2rem;
-        }
-        @media(max-width: 575px){
-            font-size: 0.8rem;
-        }
-        @media(max-width: 400px){
-            font-size: 0.5rem;
         }
     }
 }

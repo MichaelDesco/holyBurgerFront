@@ -51,7 +51,7 @@ const ProfilTaster = () => {
               <Link className="btn-taster" to={"/users/update"}>
                 Modifier profil
               </Link>
-              <Link className="btn-taster" to="#">
+              <Link className="btn-taster" to="/users/handle-review">
                 Voir mes avis
               </Link>
               <Link className="btn-taster" to="/" onClick={handleLogOut}>

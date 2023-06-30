@@ -4,12 +4,15 @@ import './register.scss';
 
 const Register = () => {
     const role = localStorage.getItem("roles");
-
+    const username = localStorage.getItem("username");
     return (
         <div className='container-login-signup'>
+            <div className='slogan'>
+                <h1>"Laissez-vous tenter, croquez et prenez du plaisir à chaque bouchée !"</h1>
+            </div>
             <div id="main-header">
                 <div className= "container-about">
-                    <Link to={"/about"} className='about'>
+                    <Link to={"/about"} className='btn-about'>
                         PRESENTATION
                     </Link>
                 </div>    
@@ -27,8 +30,8 @@ const Register = () => {
                             </Link>
                         </div>
                         ) : (
-                        <div>
-                            <p>Vous êtes bien connectez !</p>
+                        <div className='username'>
+                            <p>Bienvenue {username} !</p>
                         </div>
                         )
                     }
