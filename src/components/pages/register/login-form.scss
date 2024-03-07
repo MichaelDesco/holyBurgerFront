@@ -48,14 +48,21 @@
                     text-align: center;
                 }
                 #submit{
-                    width: 10vw;
-                    border: 2px solid white;
+                    padding: 0.1rem 0.2rem;
                     border-radius: 5px;
+                    border: none;
+                    box-shadow: 1px 1px 5px white;
                     font-size: 1.2rem;
                     font-family: "Righteous";
                     background-color: #FAAF18;
                     color: white;
                     cursor: pointer;
+                    white-space: nowrap;
+                    &:hover{
+                        background-color: white;
+                        color: #FAAF18;
+                        box-shadow: 1px 1px 8px #FAAF18;
+                    }
                 }
             }
         }

@@ -1,4 +1,4 @@
-import { useParams } from "react-router-dom";
+// import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet';
 import { Rating } from 'react-simple-star-rating';
@@ -7,12 +7,13 @@ import Header from "../../../layout/header/Header";
 import Footer from "../../../layout/footer/Footer";
 
 const HandleReview = () => {
-    const { id } = useParams();
+    const userId = localStorage.getItem("id");
+    // const { id } = useParams();
     const [reviews, setReviews] = useState(null);
     
 
     useEffect(() => {
-        fetch(`http://localhost:5001/api/reviews`, {
+        fetch(`http://localhost:5001/api/reviews/${userId}`, {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",
@@ -20,10 +21,10 @@ const HandleReview = () => {
         })
             .then((response) => response.json())
             .then((data) => {
-                setReviews(data.data);
-                console.log(data, "data");
+                setReviews(data.reviews); // Assuming 'reviews' is the array containing your reviews
+                console.log("data:",data);
             });
-    }, [id]);
+    }, [userId]); // Added userId to the dependency array
 
     return (
         <div>
@@ -31,9 +32,10 @@ const HandleReview = () => {
             {reviews && reviews.length > 0 ? (
                 reviews.map((review) => (
                     <div key={review.id}>
-            <Helmet>
-                <title>Holy Review {review.User.username}</title>
-            </Helmet>
+                        <Helmet>
+                            <title>{`Holy Review ${review.User && review.User.username}`}</title>
+                        </Helmet>
+
                         <div className="container-review" key={review.id}>
                             <div className="review-burger">
                                 <p>{review.Burger.name}</p>
@@ -45,12 +47,11 @@ const HandleReview = () => {
                             <div className="review">
                                 <p>{review.content}</p>
                                 <Rating 
-                                ratingValue={review.rating} 
-                                size={40}
-                                showTooltip
-                                initialValue={review.rating}
+                                    ratingValue={review.rating} 
+                                    size={40}
+                                    showTooltip
+                                    initialValue={review.rating}
                                 />
-                                <img className="imgBurger" src={review.picture} alt={review.name} />
                             </div>
                         </div>
                     </div>

@@ -10,33 +10,38 @@
     }
     main{
         section{
-            width: 100%;
+            width: 100vw;
             display: flex;
             flex-direction: column;
             align-items: center;
             
             .container-profil{
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                width: 100%;
+                width: 70vw;
                 height: 50vh;
+                display: flex;
+                justify-content: flex-end;
+                align-items: center;
                 border-radius: 20px;
-                
                 .profil{
+                    position: relative;
                     display: flex;
-                    flex-direction: column;
-                    align-items: space-evenly;
-                    justify-content: center;
-                    height: 50vh;
-                    width: 35%;
-                    line-height: 5px;
+                    justify-content: space-between;
+                    width: 30vw;
+                    height: 36vh;
                     img{
                         width: 18vw;
                         height: 36vh;
                         border-radius: 5px;
                         border: 2px solid #066330;}
                     }
+                    input{
+                        position: absolute;
+                        color: transparent;
+                        text-align: center;
+                        left: 0;
+                        bottom: 0;    
+                    }
+                    
                     .description{
                         display: flex;
                         flex-direction: column;
@@ -55,10 +60,10 @@
                 }
             }
             .usernav{
-                width: 90%;
+                width: 80%;
                 height: 10vh;
                 display: flex;
-                justify-content: space-between;
+                justify-content: space-evenly;
                 align-items: center;
                 h3{
                     color: #066330;

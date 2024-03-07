@@ -28,180 +28,172 @@
   ::-webkit-scrollbar-thumb:hover {
     background: #066330; 
   }
-.container-top{
-    display: flex;
-    justify-content: center;
-    margin-top: 15%;
-    margin-bottom: 15%;
-    @media screen and (max-width: 995px) {
-        margin-top: 8%;
-        margin-bottom: 8%;
-    }
-    
-    #section-top{
-
-        width: 90vw;
+main{
+    .container-top{
         display: flex;
-        flex-direction: column;
-        align-items: center;
-        border-radius: 25px;
-    
-        
-        .section-top-title{
-            width: 85vw;
-            border-radius: 5px;
-            background-color: transparent;
-            display: flex;
-            @media(max-width: 992px){
-                justify-content: center;
-            }
-    
-            h3{
-                height: 10vh;
-                color: #EE1D23;
-                text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
-                border-radius: 3px;
-                font-family: "Insanibu";
-                font-size: 2rem;
-            }
+        justify-content: center;
+        margin-top: 5%;
+        margin-bottom: 10%;
+        @media screen and (max-width: 995px) {
+            margin-top: 8%;
+            margin-bottom: 8%;
         }
-    
-        .section-top-categorie{
-            width: 85vw;
-            justify-content: space-around;
-            background-color: transparent;
-            
-            
-            
-            .section-top-items{        
-                display: flex;
-                justify-content: space-between;
-                align-items: center;
-                background-color:transparent;
-                @media (max-width: 992px) {
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: space-evenly;
-                }
-                .right{
-                    border-radius: 30px 0 0 30px;
-                }
-                .left{
-                    border-radius: 0 30px 30px 0;
-                }
-                .section-top-item{
-                    border: 1px solid white;
-                    box-shadow: 1px 1px 5px #066330;
-                    height: 55vh;
-                    width: 40vw;
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: space-evenly;
-                    background-color: rgba($color: #FAAF18, $alpha: 0.8);
-                    
-                    @media (max-width: 992px) {
-                        min-width: 60vw;
-                        max-width: 90vw;
-                        margin: 2%;
-                        border-radius: 30px;
-                    }
-                    @media (max-width: 768px) {
-                        width: 75vw;
-                        max-height: 80vw;
-                        margin: 2%;
-                    }
-
-                    h4{
-                        color: white;
-                        text-shadow: 0 0 1px #ee1d23, 0 0 2px #ee1d23, 0 0 3px #ee1d23;
-                        font-size: 1.1rem;
-                        height: 1vh;
-                        font-family: "Insanibu";
-                        @media (max-width: 768px) {
-                            font-size: 1.2rem;
-                        }
-                        @media (max-width: 576px) {
-                            font-size: 1rem;
-                        }
-                        
-                    }
-                    
-                    .section-top-categorie-title{
-                        width: 80%;
-                        display: flex;
-                        flex-direction: column;
-                        text-align: center;
-                    }
-
-                    p{
-                        font-size: 0.8rem;
-                        text-align: center; 
-                        font-family: "Righteous";   
-                    }
-                    a{
-                        text-decoration: none;
-                        color: #066330;
-                        font-size: 0.8rem;
-                        text-align: center;
-                        
-                        
-                    }
-                    .voir{
-                        display: flex;
-                        justify-content: center;
-                        align-items: center;
-                        
-                        a{
-                            background-color: rgba($color: #FBF3E4, $alpha: 0.8);
-                            border-radius: 5px;
-                            padding: 0.3rem 0.8rem;
-                            white-space: nowrap;
-                            box-shadow: 1px 1px 3px #066330;
-                        }
-                        a:hover{
-                            background-color: rgba($color: #066330, $alpha: 0.6);
-                            box-shadow: 1px 1px 5px #066330;
-                            color: #FAAF18;
-                            box-shadow: 1px 1px 8px white
-                        }
-                    }
         
-                    .section-top-card{
-                        background-color: rgba($color: #FBF3E4, $alpha: 0.8);
-                        height: 70%;
-                        width: 80%;
+        #section-top{
+    
+            width: 90vw;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border-radius: 25px;
+        
+            
+            .section-top-title{
+                width: 85vw;
+                // border-radius: 2px;
+                background-color: transparent;
+                display: flex;
+                @media(max-width: 992px){
+                    justify-content: center;
+                }
+        
+                h3{
+                    height: 10vh;
+                    color: #EE1D23;
+                    text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
+                    border-radius: 3px;
+                    font-family: "Insanibu";
+                    font-size: 2rem;
+                }
+            }
+        
+            .section-top-categorie{
+                width: 85vw;
+                justify-content: space-around;
+                background-color: transparent;
+                
+                
+                
+                .section-top-items{        
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+                    background-color:transparent;
+                    @media (max-width: 992px) {
+                        flex-direction: column;
+                        align-items: center;
+                        justify-content: space-evenly;
+                    }
+                    .section-top-item{
+                        box-shadow: 1px 1px 5px #066330;
+                        height: 55vh;
+                        width: 40vw;
                         display: flex;
                         flex-direction: column;
                         align-items: center;
                         justify-content: space-evenly;
-                        border-radius: 10px;
-                        box-shadow: 8px 5px 10px grey;
+                        background-color: rgba($color: #FAAF18, $alpha: 0.8);
+                        
                         @media (max-width: 992px) {
+                            min-width: 60vw;
+                            max-width: 90vw;
+                            margin: 2%;
                         }
                         @media (max-width: 768px) {
+                            width: 75vw;
+                            max-height: 80vw;
+                            margin: 2%;
                         }
-            
-                        h5{
-                            background-color: transparent;
-                            text-align: center;
-                            color: #066330;
-                            font-family: "Righteous";
+    
+                        h4{
+                            color: white;
+                            text-shadow: 0 0 1px #ee1d23, 0 0 2px #ee1d23, 0 0 3px #ee1d23;
+                            font-size: 1.1rem;
+                            height: 1vh;
+                            font-family: "Insanibu";
                             @media (max-width: 768px) {
-                                font-size: 1.1rem;
+                                font-size: 1.2rem;
+                            }
+                            @media (max-width: 576px) {
+                                font-size: 1rem;
+                            }
+                            
+                        }
+                        
+                        .section-top-categorie-title{
+                            width: 80%;
+                            display: flex;
+                            flex-direction: column;
+                            text-align: center;
+                        }
+    
+                        p{
+                            font-size: 0.8rem;
+                            text-align: center; 
+                            font-family: "Righteous";   
+                        }
+                        a{
+                            text-decoration: none;
+                            color: #066330;
+                            font-size: 0.8rem;
+                            text-align: center;
+                            
+                            
+                        }
+                        .voir{
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            
+                            a{
+                                background-color: rgba($color: #FBF3E4, $alpha: 0.8);
+                                border-radius: 5px;
+                                padding: 0.3rem 0.8rem;
+                                white-space: nowrap;
+                                box-shadow: 1px 1px 3px #066330;
+                            }
+                            a:hover{
+                                background-color: rgba($color: #066330, $alpha: 0.6);
+                                box-shadow: 1px 1px 5px #066330;
+                                color: #FAAF18;
+                                box-shadow: 1px 1px 8px white
                             }
                         }
             
-                        img{
-                            height: 75%;
-                            max-width: 90%;
-                            border-radius: 10px;
-                            object-fit: cover;
-                            object-position: center;
-                        }
-                        @media(max-width: 992px){
-                            height: 60%;
+                        .section-top-card{
+                            background-color: rgba($color: #FBF3E4, $alpha: 0.8);
+                            height: 70%;
                             width: 80%;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            justify-content: space-evenly;
+                            box-shadow: 8px 5px 10px grey;
+                            @media (max-width: 992px) {
+                            }
+                            @media (max-width: 768px) {
+                            }
+                
+                            h5{
+                                background-color: transparent;
+                                text-align: center;
+                                color: #066330;
+                                font-family: "Righteous";
+                                @media (max-width: 768px) {
+                                    font-size: 1.1rem;
+                                }
+                            }
+                
+                            img{
+                                height: 75%;
+                                max-width: 90%;
+                                object-fit: cover;
+                                object-position: center;
+                            }
+                            @media(max-width: 992px){
+                                height: 60%;
+                                width: 80%;
+                            }
                         }
                     }
                 }

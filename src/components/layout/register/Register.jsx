@@ -31,7 +31,8 @@ const Register = () => {
                         </div>
                         ) : (
                         <div className='username'>
-                            <p>Bienvenue {username} !</p>
+                            <p>{username}</p>
+                            <p>connecté</p>
                         </div>
                         )
                     }

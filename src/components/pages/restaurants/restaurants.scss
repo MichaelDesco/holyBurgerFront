@@ -1,7 +1,7 @@
 .container-flexbox {
-    margin: 2rem auto;
+    margin: 8vh auto;
     width: 85vw;
-    min-height: 55vh;
+    min-height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,12 +11,10 @@
     border-radius: 30px;
 
     .container-burger {
-        
-        
         width: 85vw;
         height: 55vh;
         display: flex;
-        justify-content: space-evenly;
+        justify-content: space-around;
         align-items: center;
 
         h3,h4 {

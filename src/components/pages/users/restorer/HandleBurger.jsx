@@ -8,7 +8,6 @@ const HandleBurger = () => {
   const token = localStorage.getItem("jwt");
   const navigate = useNavigate();
  
-
   useEffect(() => {
     if (!localStorage.getItem("jwt")) {
       navigate("/login");
@@ -64,51 +63,39 @@ const HandleBurger = () => {
   };
 
   return (
-    <>
+    <div className="handle-page">
       <Header />
       <form className="handle" onSubmit={handleSubmit}>
         <div className="form-group">
           <div className="form-items">
-            <label>
-              Nom du burger
-              <input type="text" name="name" />
-            </label>
-            <label>
-              Prix
-              <input type="number" name="price" />
-            </label>
-            <label>
-              Restaurant
-              <select className="restaurant-select" name="restaurant">
-                <option className="restaurant-option" value=""></option>
-                {restaurants ? (
-                  restaurants.map((restaurant) => {
-                    return <option key={restaurant.id} value={restaurant.id}>{restaurant.name}</option>;
-                  })
-                ) : (
-                  <option value="">Vous n'avez pas encore de restaurant</option>
-                )}
-              </select>
-            </label>
+            <label>Nom du burger</label>
+            <input type="text" name="name" />
+            <label>Prix</label>
+            <input type="number" name="price" />
+            <label>Restaurant</label>
+            <select className="restaurant-select" name="restaurant">
+              <option className="restaurant-option" value=""></option>
+              {restaurants ? (
+                restaurants.map((restaurant) => {
+                  return <option key={restaurant.id} value={restaurant.id}>{restaurant.name}</option>;
+                })
+              ) : (
+                <option value="">Vous n'avez pas encore de restaurant</option>
+              )}
+            </select>
           </div>
           <div className="form-items">
-            <label>
-              Garniture
-              <input type="text" name="garniture" />
-            </label>
-            <label>
-              Fromage
-              <input type="text" name="fromage" />
-            </label>
-            <label>
-              Sauce
-              <input type="text" name="sauce" />
-            </label>
+            <label>Garniture</label>
+            <input type="text" name="garniture" />
+            <label>Fromage</label>
+            <input type="text" name="fromage" />
+            <label>Sauce</label>
+            <input type="text" name="sauce" />
           </div>
         </div>
         <button className="btn-custom" type="submit">Créer</button>
       </form>
-    </>
+    </div>
   );
 };
 

@@ -49,10 +49,8 @@
 
     #main-header{
         width: 85vw;
-        border: 1px solid white;
         height: 55vh;
-        border-radius: 30px;
-        background-image: url(../../../../public/images/burgsurf2.jpg);
+        background-image: url(../../../../public/images/burgsurf2.avif);
         background-size: cover;
         background-position: center;
         background-repeat: no-repeat;
@@ -94,7 +92,7 @@
                 text-decoration: none;
                 color: #EE1D23;
                 background-color: rgba($color: #FAAF18, $alpha: 0.8);
-                border-radius: 15px 5px 5px 5px;
+                border-radius: 3px;
                 border: 1px solid white;
                 padding: 0.2rem 1rem;
                 @media screen and (max-width: 995px){
@@ -113,7 +111,7 @@
             justify-content: center;
             align-items: center;
             width: 20%;
-            height: 40vh;
+            height: 30vh;
             font-family: "Insanibu";
             color: #EE1D23;
             background-color: transparent;
@@ -131,7 +129,7 @@
                 text-decoration: none;
                 line-height: 0px;
                 .push{    
-                    padding: 1.1rem 0.5rem;
+                    padding: 1.5rem 0.8rem;
                     border-radius: 50%;
                     border: 1px solid white;
                     text-align: center;
@@ -186,10 +184,14 @@
             }
             .username{
                 height: 60%;
-                width: 25vw;
-                display: flex;
-               p{
-               }             
+                line-height: 4px;
+                text-align: center;
+                p:last-child{
+                    font-size: 0.8rem;
+                    color: #066330;
+                    font-family: "Righteous";
+                    text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
+                }           
             }
         }
     }

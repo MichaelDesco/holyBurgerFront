@@ -9,10 +9,10 @@ const Header = () => {
 
   return (
     <>
-      <header className="d-flex ">
+      <header className="header-classic d-flex ">
         <section class="container-fluid d-flex ">
           <div class="container d-flex d-row ">
-            <div className="logo d-flex  align-items-center">
+            <div className="logo d-flex align-items-center">
               {/* Utilisez la variable holyBurgerLogo comme source de l'image */}
               <img className="navbar-brand" src={holyBurgerLogo} alt="logo" />
             </div>
@@ -29,7 +29,7 @@ const Header = () => {
                 <span className="btn btn-warning">Menu</span>
               </button>
               <div className="collapse navbar-collapse menu" id="navbarNav">
-                <ul className="navbar-nav">
+                <ul className="navbar-nav justify-content-center">
                   <li className="nav-item">
                     <Link to={"/"} className="nav-link btn btn-warning accueil" aria-current="page">
                       ACCUEIL

@@ -9,7 +9,7 @@ const HeaderAdmin = () => {
         window.location.href="/";
     };
     return (
-        <header>
+        <header className="header-admin">
             <nav className="navbar navbar-expand-lg bg-body-tertiary nav-custom">
                 <div className="container-fluid">
                     <h1 className="navbar-brand" href="/admin">Holy Burger Administration</h1>

@@ -2,9 +2,22 @@ import Header from "../../../layout/header/Header";
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router";
 import "./profil.scss";
 
 const ProfilRestorer = () => {
+
+  const navigate = useNavigate();
+  useEffect(() => {
+    if (!localStorage.getItem("jwt")) {
+      localStorage.removeItem("id");
+      localStorage.removeItem("username");
+      localStorage.removeItem("jwt");
+      localStorage.removeItem("roles");
+      navigate("/");
+    }
+  }, [navigate]);
+
   const { id, role } = useParams();
   const [user, setUser] = useState(null);
 
@@ -39,6 +52,7 @@ const ProfilRestorer = () => {
             <div className="container-profil">
               <div className="profil">
                 <img src={user.picture} alt={user.username} />
+                <input type="file" name="file" id="file" />
               </div>
               <div className="description">
                 <h2>{user.username}</h2>

@@ -20,6 +20,7 @@ const RestaurantBurgers = () => {
             .then((response) => response.json())
             .then((data) => {
                 setBurgers(data.data);
+                console.log("burgers:",data);
                 setRestaurantName(data.restaurantName);
             });
     }, [id]);
@@ -27,7 +28,7 @@ const RestaurantBurgers = () => {
     return (
         <div className="component-burgers">
             <Helmet>
-                <title>{restaurantName && `${restaurantName} 🍔`}</title>
+                <title>{restaurantName  && `${restaurantName} 🍔`}</title>
             </Helmet>
             <Header />
             {burgers && burgers.length > 0 ? (
@@ -36,7 +37,7 @@ const RestaurantBurgers = () => {
                         <div className="container-flexbox" key={burger.id}>
                             <div className="container-burger">
                                 <div className="burger">
-                                    <h3>{burger.name}</h3>
+                                    <h3>{burger.name} {burger.averageRating}</h3>
                                     <img className="imgBurger" src={burger.picture} alt={burger.name} />
                                 </div>
                                 <div className="description">
@@ -58,4 +59,10 @@ const RestaurantBurgers = () => {
 }
 
 export default RestaurantBurgers;
+
+
+
+
+
+
 

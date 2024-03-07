@@ -20,7 +20,7 @@
             height: 100%;
     
             form{
-                height: 52vh;
+                height: 65vh;
                 width: 50vw;
                 display: flex;
                 flex-direction: column;
@@ -29,6 +29,7 @@
                 padding-bottom: 3rem;
                 h2{
                     font-size: 2rem;
+                    text-shadow: 1px 1px #066330, -1px -1px #066330, 1px -1px #066330, -1px 1px #066330;
                     font-family: "Righteous";
                     color: #FAAF18;
                 }
@@ -88,12 +89,16 @@
                 }
                 button{
                     width: 10vw;
-                    border: 2px solid white;
+                    box-shadow: 1px 1px #066330;
                     border-radius: 5px;
                     font-family: "Righteous";
                     background-color: #FAAF18;
                     color: white;
                     cursor: pointer;
+                    &:hover{
+                        background-color: #066330;
+                        box-shadow: 1px 1px #FAAF18;
+                    }
                 }
             }
         }

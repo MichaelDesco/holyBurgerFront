@@ -57,7 +57,7 @@ const Burgers = () => {
             <div className="container-burger">
               <div className="burger">
                 <div className="review-btn">
-                  <h3>{burger.name}</h3>
+                  <h3>{burger.name} {burger.averageRating}</h3>
                   {isTaster && (
                     <button onClick={() => reviewClick(index)}>Donnez votre avis</button>
                   )}
@@ -86,5 +86,3 @@ const Burgers = () => {
 };
 
 export default Burgers;
-
-
