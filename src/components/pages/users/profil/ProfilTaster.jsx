@@ -47,6 +47,17 @@ const ProfilTaster = () => {
       {user ? (
         <main key={user.id}>
           <section>
+            <div className="usernav">
+              <Link className="btn-taster" to={"/users/update"}>
+                Modifier profil
+              </Link>
+              <Link className="btn-taster" to="/users/handle-review">
+                Voir mes avis
+              </Link>
+              {/* <Link className="btn-taster" to="/" onClick={handleLogOut}>
+                Déconnexion
+              </Link> */}
+            </div>
             <div className="container-profil">
               <div className="profil">
                 <img src={user.picture} alt={user.username} />
@@ -57,17 +68,6 @@ const ProfilTaster = () => {
                 <p>{user.roles}</p>
                 <p>{user.mail.slice(0, user.mail.indexOf("@"))}@*****</p>
               </div>
-            </div>
-            <div className="usernav">
-              <Link className="btn-taster" to={"/users/update"}>
-                Modifier profil
-              </Link>
-              <Link className="btn-taster" to="/users/handle-review">
-                Voir mes avis
-              </Link>
-              <Link className="btn-taster" to="/" onClick={handleLogOut}>
-                Déconnexion
-              </Link>
             </div>
           </section>
         </main>

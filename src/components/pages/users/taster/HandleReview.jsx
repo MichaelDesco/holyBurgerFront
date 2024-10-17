@@ -1,4 +1,3 @@
-// import { useParams } from "react-router-dom";
 import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet';
 import { Rating } from 'react-simple-star-rating';
@@ -8,11 +7,10 @@ import Footer from "../../../layout/footer/Footer";
 
 const HandleReview = () => {
     const userId = localStorage.getItem("id");
-    // const { id } = useParams();
     const [reviews, setReviews] = useState(null);
-    
 
     useEffect(() => {
+        console.log("Fetching reviews for userId:", userId);
         fetch(`http://localhost:5001/api/reviews/${userId}`, {
             method: "GET",
             headers: {
@@ -21,10 +19,15 @@ const HandleReview = () => {
         })
             .then((response) => response.json())
             .then((data) => {
+                console.log("Received data:", data);
                 setReviews(data.reviews); // Assuming 'reviews' is the array containing your reviews
-                console.log("data:",data);
+            })
+            .catch((error) => {
+                console.error("Error fetching reviews:", error);
             });
     }, [userId]); // Added userId to the dependency array
+
+    console.log("Reviews state:", reviews);
 
     return (
         <div>

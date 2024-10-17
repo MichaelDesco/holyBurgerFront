@@ -1,32 +1,40 @@
 import { Link } from 'react-router-dom';
 import './register.scss';
+// import LogoutButton from '../log-out/LogoutButton';
 
 
 const Register = () => {
     const role = localStorage.getItem("roles");
     const username = localStorage.getItem("username");
+
     return (
         <div className='container-login-signup'>
             <div className='slogan'>
-                <h1>"Laissez-vous tenter, croquez et prenez du plaisir à chaque bouchée !"</h1>
+                <h1>"Laissez-vous tenter et prenez du plaisir à chaque bouchée !"</h1>
             </div>
             <div id="main-header">
+                {/* {role? (
+                    <LogoutButton  />
+                    ): (
+                    null
+                    )
+                } */}
                 <div className= "container-about">
                     <Link to={"/about"} className='btn-about'>
-                        PRESENTATION
+                        ABOUT
                     </Link>
-                </div>    
+                </div>
                 <div className="container-btn-register">
                     {!role ? (
                         <div>
                             <Link to={"/login"} className= "login" >
                                 <div className="push">
                                     <h2>PUSH</h2>
-                                    <p>Connexion</p>
-                                </div>                    
-                            </Link>   
+                                    <p>Login</p>
+                                </div>
+                            </Link>
                             <Link to={"/signup"} className='signup'>
-                                <p>INSCRIPTION</p>
+                                <p>Signup</p>
                             </Link>
                         </div>
                         ) : (

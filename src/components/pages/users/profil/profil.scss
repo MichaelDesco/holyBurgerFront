@@ -11,60 +11,16 @@
     main{
         section{
             width: 100vw;
+            height: 70vh;
             display: flex;
-            flex-direction: column;
             align-items: center;
-            
-            .container-profil{
-                width: 70vw;
-                height: 50vh;
-                display: flex;
-                justify-content: flex-end;
-                align-items: center;
-                border-radius: 20px;
-                .profil{
-                    position: relative;
-                    display: flex;
-                    justify-content: space-between;
-                    width: 30vw;
-                    height: 36vh;
-                    img{
-                        width: 18vw;
-                        height: 36vh;
-                        border-radius: 5px;
-                        border: 2px solid #066330;}
-                    }
-                    input{
-                        position: absolute;
-                        color: transparent;
-                        text-align: center;
-                        left: 0;
-                        bottom: 0;    
-                    }
-                    
-                    .description{
-                        display: flex;
-                        flex-direction: column;
-                        align-items: center;
-                        justify-content: center;                  
-                        width: 18vw;
-                        height: 36vh;
-                        border: 2px solid #066330;
-                        border-radius: 5px;
-                        background-color: #FBF3E4;
-                        h2{
-                            color: #066330;
-                            text-transform: uppercase;
-                            font-family: "Righteous";
-                        }
-                }
-            }
             .usernav{
-                width: 80%;
-                height: 10vh;
+                width: 35vw;
+                height: 40vh;
                 display: flex;
-                justify-content: space-evenly;
+                flex-direction: column;                
                 align-items: center;
+                justify-content: space-evenly;
                 h3{
                     color: #066330;
                     font-family: "Righteous";
@@ -74,7 +30,7 @@
                     display: flex;
                     justify-content: center;
                     align-items: center;
-                    width: 16vw;
+                    width: 14vw;
                     height: 6vh;
                     border-radius: 10px;
                     border: 1px solid white;
@@ -94,6 +50,51 @@
                     }
                 }
             }
+            .container-profil{
+                width: 65vw;
+                height: 60vh;
+                display: flex;
+                align-items: center;
+                // justify-content: space-evenly;
+                border-radius: 20px;
+                .profil{
+                    position: relative;
+                    display: flex;
+                    width: 18vw;
+                    height: 36vh;
+                    margin-right: 8vw;
+                    img{
+                        width: 18vw;
+                        height: 36vh;
+                        border-radius: 5px;
+                        border: 2px solid #066330;}
+                    }
+                    input{
+                        position: absolute;
+                        color: transparent;
+                        text-align: center;
+                        left: 0;
+                        bottom: 0;    
+                    }
+                    
+                }
+                .description{
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;                  
+                    width: 25vw;
+                    height: 36vh;
+                    border: 2px solid #066330;
+                    border-radius: 5px;
+                    background-color: #FBF3E4;
+                    h2{
+                        color: #066330;
+                        text-transform: uppercase;
+                        font-family: "Righteous";
+                    }
+            }
+            
         }
     }    
 }

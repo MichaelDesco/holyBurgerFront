@@ -6,7 +6,7 @@
     color: #066330;
     font-family: "Righteous";
     background-color: rgba($color: #FBF3E4, $alpha: 0.8);
-    margin: 2rem auto;
+    margin: 3.5rem auto;
     width: 85vw;
     height: 40vh;
     display: flex;
@@ -17,6 +17,7 @@
         flex-direction: column;
         margin-top: auto;
         margin-bottom: auto;
+        text-align: center;
         img{
             width: 20vw;
         }

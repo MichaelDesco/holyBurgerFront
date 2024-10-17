@@ -49,6 +49,20 @@ const ProfilRestorer = () => {
       {user ? (
         <main key={user.id}>
           <section>
+            <div className="usernav">
+              <Link className="btn-taster" to={"/users/update"}>
+                Modifier profil
+              </Link>
+              <Link className="btn-taster" to={"/users/handle_restaurant"}>
+                Gestion Restaurant
+              </Link>
+              <Link className="btn-taster" to={"/users/handle_burger"}>
+                Gestion Burger
+              </Link>
+              {/* <Link className="btn-taster" to={"/"} onClick={handleLogOut}>
+                Déconnexion
+              </Link> */}
+            </div>
             <div className="container-profil">
               <div className="profil">
                 <img src={user.picture} alt={user.username} />
@@ -60,20 +74,7 @@ const ProfilRestorer = () => {
                 <p>{user.mail}</p>
               </div>
             </div>
-            <div className="usernav">
-              <Link className="btn-taster" to={"/users/update"}>
-                Modifier profil
-              </Link>
-              <Link className="btn-taster" to={"/users/handle_restaurant"}>
-                Gestion Restaurant
-              </Link>
-              <Link className="btn-taster" to={"/users/handle_burger"}>
-                Gestion Burger
-              </Link>
-              <Link className="btn-taster" to={"/"} onClick={handleLogOut}>
-                Déconnexion
-              </Link>
-            </div>
+            
           </section>
         </main>
       ) : (

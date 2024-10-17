@@ -3,9 +3,14 @@ import Stars from "../../layout/stars/Stars";
 import Footer from "../../layout/footer/Footer";
 import { useEffect, useState } from "react";
 import { Helmet } from 'react-helmet';
+import { useNavigate } from 'react-router-dom';
+import Swal from 'sweetalert2';
+import withReactContent from 'sweetalert2-react-content';
 import "./burgers.scss";
 
 const Burgers = () => {
+  const MySwal = withReactContent(Swal);
+  const navigate = useNavigate();
   const [showReview, setShowReview] = useState([]);
 
   const isTaster = localStorage.getItem("roles")?.includes("goûteur");
@@ -32,6 +37,7 @@ const Burgers = () => {
         return response.json();
       })
       .then((data) => {
+        console.log("Burgers data from API:", data); // Log des données de burgers récupérées depuis l'API
         const initialShowReview = Array.from(
           { length: data.data.length },
           () => false
@@ -45,6 +51,20 @@ const Burgers = () => {
       });
   }, []);
 
+  // Fonction pour soumettre un avis
+  const submitReview = () => {
+    // Affichage de la pop-up
+    MySwal.fire({
+      title: <p>Merci, votre avis a bien été envoyé.</p>,
+      icon: 'success',
+      showConfirmButton: true,
+      confirmButtonText: "OK"
+    }).then(() => {
+      // Redirection vers le composant HandleReview
+      navigate('/users/handle-review'); // Remplacez '/handle-review' par l'URL de votre composant HandleReview
+    });
+  };
+
   return (
     <div className="component-burgers">
       <Helmet>
@@ -57,7 +77,7 @@ const Burgers = () => {
             <div className="container-burger">
               <div className="burger">
                 <div className="review-btn">
-                  <h3>{burger.name} {burger.averageRating}</h3>
+                  <h3>{burger.name} <span>{burger.averageRating}</span></h3>
                   {isTaster && (
                     <button onClick={() => reviewClick(index)}>Donnez votre avis</button>
                   )}
@@ -73,7 +93,10 @@ const Burgers = () => {
               </div>
             </div>
             {showReview.find((value, i) => i === index) && (
-              <Stars burgerId={burger.id} />
+              <Stars burgerId={burger.id} 
+              restaurantId={burger.RestaurantId}
+              submitReview={submitReview} 
+              />
             )}
           </div>
         ))
@@ -86,3 +109,5 @@ const Burgers = () => {
 };
 
 export default Burgers;
+
+

@@ -2,6 +2,9 @@
     font-family: "Righteous";
     src: url("../../../../public/fonts/Righteous-Regular.ttf");
 }
+.swal2-icon {
+    display: none !important;
+}
 .signup-form{
     height: 100vh;
     .container-register{

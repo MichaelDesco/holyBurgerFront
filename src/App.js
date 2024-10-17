@@ -4,6 +4,7 @@ import Home from "./components/pages/home/Home";
 import About from "./components/pages/home/About";
 
 import SignupForm from "./components/pages/register/SignupForm";
+import UserValidation from "./components/pages/register/UserValidation";
 import LoginForm from "./components/pages/register/LoginForm";
 
 import Profil from "./components/pages/users/profil/Profil";
@@ -46,6 +47,7 @@ function App() {
           <Route path="/burgers" element = {<Burgers />} />
           <Route path="/about" element = {<About />} />
           <Route path="/signup" element = {<SignupForm />} />
+          <Route path="/userValidation" element = {<UserValidation />} />
           <Route path="/login" element = {<LoginForm />} />
         {/* ROUTE REGISTER */}
           {/* ROUTE PROFIL USERS */}

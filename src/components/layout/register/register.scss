@@ -33,7 +33,7 @@
         
         h1{
             font-family: "Righteous";
-            font-size: 1.1rem;
+            font-size: 1.3rem;
             color: #EE1D23;
             text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
             @media screen and (max-width: 768px){
@@ -48,6 +48,7 @@
 
 
     #main-header{
+        position: relative;
         width: 85vw;
         height: 55vh;
         background-image: url(../../../../public/images/burgsurf2.avif);
@@ -67,10 +68,33 @@
             align-items: flex-end;
             justify-content: space-around;
         }
-
+        // .btn-logout{
+        //     position: absolute;
+        //     // bottom: -10%;
+        //     // right: -7%;
+        //     // transform: translate(50%, 50%);
+        //     font-size: 1rem;
+        //     font-weight: bolder;
+        //     color:  #FAAF18;
+        //     background-color: #066330;
+        //     font-family: "Righteous";
+        //     text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
+        //     text-decoration: none;
+        //     padding: 1.4rem 0.6rem;
+        //     border-radius: 50%;
+        //     border: 2px solid #FAAF18;
+        //     z-index: 999; // Assurez-vous que le bouton reste au-dessus des autres éléments
+        //     // &focus{
+        //     //     outline: none;
+        //     // }
+        // }
+        // .btn-logout.sticky {
+        //     position: fixed;
+        //     transform: translate(-96%, -30%); // Centrage du bouton sur son propre axe
+        // } 
         .container-about{
-            width: 30%;
-            height: 20vh;
+            width: 8%;
+            height: 12vh;
             display: flex;
             flex-direction: column;
             justify-content: center;
@@ -86,15 +110,16 @@
             }
 
             .btn-about{
-                font-family: "Righteous";
-                font-size: 0.9rem;
+                font-family: "Insanibu";
+                font-size: 1rem;
                 text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
                 text-decoration: none;
                 color: #EE1D23;
                 background-color: rgba($color: #FAAF18, $alpha: 0.8);
                 border-radius: 3px;
                 border: 1px solid white;
-                padding: 0.2rem 1rem;
+                padding: 1.2rem 0.5rem;
+                border-radius: 50%;
                 @media screen and (max-width: 995px){
                     font-size: 0.8rem;
                 }               
@@ -110,8 +135,8 @@
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            width: 20%;
-            height: 30vh;
+            width: 10%;
+            height: 20vh;
             font-family: "Insanibu";
             color: #EE1D23;
             background-color: transparent;
@@ -129,7 +154,7 @@
                 text-decoration: none;
                 line-height: 0px;
                 .push{    
-                    padding: 1.5rem 0.8rem;
+                    padding: 1rem 1rem;
                     border-radius: 50%;
                     border: 1px solid white;
                     text-align: center;
@@ -148,6 +173,9 @@
                         font-family: "Righteous";
                         white-space: nowrap;
                         text-align: center;
+                        &:hover{
+                            color: #FAAF18;
+                        }
                     }
                 }
                 .push:hover{
@@ -167,8 +195,8 @@
                     color: #ee1d23;
                     font-weight: bolder;
                     font-size: 1rem;
-                    text-shadow:0 0 3px white, 2px 2px 5px #066330;
-                    color: #FAAF18;
+                    text-shadow:0 0 3px white, 2px 2px 5px #FAAF18;
+                    color: #066330;
                     font-weight: bold;
                     font-family: "Righteous";
                     white-space: nowrap;
@@ -178,7 +206,7 @@
                 }
                 p:hover{
                     text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
-                    color: #066330;
+                    color: #FAAF18;
                     transition: all 500ms ease-in-out;
                 }
             }
@@ -191,7 +219,7 @@
                     color: #066330;
                     font-family: "Righteous";
                     text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
-                }           
+                }          
             }
         }
     }

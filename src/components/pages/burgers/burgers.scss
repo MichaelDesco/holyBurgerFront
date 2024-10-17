@@ -15,6 +15,7 @@
             align-items: center;
             .review-btn{
                 display: flex;
+                align-items: center;
                 h3{
                     color: #066330;
                     font-size: 1.4rem;
@@ -27,6 +28,15 @@
                             //         height: 20px;
                             //     }
                             // }
+                    span{
+                        color: #FAAF18;
+                        background-color: #066330;
+                        border: 1px solid #FAAF18 ;
+                        box-shadow: grey 2px 2px 5px 2px;
+                        font-size: 0.8rem;
+                        padding: 0.1rem 0.4rem;
+                        border-radius: 5px;
+                    }
                 }
                 button{
                     background-color: transparent;
