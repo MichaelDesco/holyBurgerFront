@@ -1,0 +1,11 @@
+.search-bar {
+  height: 8vh;
+  width: 92%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-end;
+  input {
+    width: 20vw;
+  }
+}

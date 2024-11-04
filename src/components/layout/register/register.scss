@@ -1,226 +1,230 @@
 @font-face {
-    font-family: "Insanibu";
-    src: url("../../../../public/fonts/Insanibu.ttf");
+  font-family: "Insanibu";
+  src: url("../../../../public/fonts/Insanibu.ttf");
 }
 @font-face {
-    font-family: "Righteous";
-    src: url("../../../../public/fonts/Righteous-Regular.ttf");
+  font-family: "Righteous";
+  src: url("../../../../public/fonts/Righteous-Regular.ttf");
 }
 
-  //================================================\\
- //==============LOGIN-SIGNUP-SECTION================\\
+//================================================\\
+//==============LOGIN-SIGNUP-SECTION================\\
 //====================================================\\
 
-.container-login-signup{
-    width: 100%;
-    height: 65vh;
+.container-login-signup {
+  width: 100%;
+  height: 65vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 995px) {
+    height: 45vh;
+  }
+  @media (max-width: 768px) {
+    height: 35vh;
+  }
+  .slogan {
+    @media screen and (min-width: 995px) {
+      width: 85%;
+      text-align: end;
+    }
+    h1 {
+      font-family: "Righteous";
+      font-size: 1.3rem;
+      color: #ee1d23;
+      text-shadow: 1px 1px white, -1px -1px white, 1px -1px white,
+        -1px 1px white;
+      @media screen and (max-width: 768px) {
+        font-size: 0.9rem;
+      }
+      @media screen and (max-width: 576px) {
+        font-size: 0.8rem;
+      }
+    }
+  }
+
+  #main-header {
+    position: relative;
+    width: 85vw;
+    height: 55vh;
+    background-image: url(../../../../public/images/burgsurf2.avif);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    @media(max-width: 995px){
-        height: 45vh;
+    justify-content: space-between;
+    box-shadow: 1px 1px 5px #066330;
+    @media (max-width: 992px) {
+      height: 40vh;
     }
-    @media(max-width: 768px){
-        height: 35vh;
+    @media (max-width: 768px) {
+      height: 30vh;
+      background-position-x: 65%;
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      justify-content: space-around;
     }
-    .slogan{
-        @media screen and (min-width: 995px){
-            width: 85%;
-            text-align: end;
+    // .btn-logout{
+    //     position: absolute;
+    //     // bottom: -10%;
+    //     // right: -7%;
+    //     // transform: translate(50%, 50%);
+    //     font-size: 1rem;
+    //     font-weight: bolder;
+    //     color:  #FAAF18;
+    //     background-color: #066330;
+    //     font-family: "Righteous";
+    //     text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
+    //     text-decoration: none;
+    //     padding: 1.4rem 0.6rem;
+    //     border-radius: 50%;
+    //     border: 2px solid #FAAF18;
+    //     z-index: 999; // Assurez-vous que le bouton reste au-dessus des autres éléments
+    //     // &focus{
+    //     //     outline: none;
+    //     // }
+    // }
+    // .btn-logout.sticky {
+    //     position: fixed;
+    //     transform: translate(-96%, -30%); // Centrage du bouton sur son propre axe
+    // }
+    .container-about {
+      width: 8%;
+      height: 12vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background-color: transparent;
+      @media (max-width: 992px) {
+        height: 15vh;
+      }
+      @media (max-width: 768px) {
+        height: 10vh;
+        width: 40vw;
+        justify-content: flex-end;
+      }
+
+      .btn-about {
+        font-family: "Insanibu";
+        font-size: 1rem;
+        text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
+        text-decoration: none;
+        color: #ee1d23;
+        background-color: rgba($color: #faaf18, $alpha: 0.8);
+        border-radius: 3px;
+        border: 1px solid white;
+        padding: 1.2rem 0.5rem;
+        border-radius: 50%;
+        @media screen and (max-width: 995px) {
+          font-size: 0.8rem;
         }
-        
-        h1{
-            font-family: "Righteous";
-            font-size: 1.3rem;
-            color: #EE1D23;
-            text-shadow: 1px 1px white, -1px -1px white, 1px -1px white, -1px 1px white;
-            @media screen and (max-width: 768px){
-                font-size: 0.9rem;
-            }
-            @media screen and (max-width: 576px){
-                font-size: 0.8rem;
-            }
-                
-        }
+      }
+      .btn-about:hover {
+        background-color: rgba($color: #066330, $alpha: 0.8);
+        transition: all 500ms ease-in-out;
+      }
     }
 
+    .container-btn-register {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      width: 10%;
+      height: 20vh;
+      font-family: "Insanibu";
+      color: #ee1d23;
+      background-color: transparent;
+      @media (max-width: 992px) {
+        height: 25vh;
+      }
+      @media (max-width: 768px) {
+        height: 10vh;
+        width: 32vw;
+      }
 
-    #main-header{
-        position: relative;
-        width: 85vw;
-        height: 55vh;
-        background-image: url(../../../../public/images/burgsurf2.avif);
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
-        display: flex;
-        justify-content: space-between;
-        box-shadow: 1px 1px 5px #066330;
-        @media(max-width: 992px){
-            height: 40vh;
-        }
-        @media(max-width: 768px){
-            height: 30vh;
-            background-position-x: 65%;
-            flex-direction: column-reverse;
-            align-items: flex-end;
-            justify-content: space-around;
-        }
-        // .btn-logout{
-        //     position: absolute;
-        //     // bottom: -10%;
-        //     // right: -7%;
-        //     // transform: translate(50%, 50%);
-        //     font-size: 1rem;
-        //     font-weight: bolder;
-        //     color:  #FAAF18;
-        //     background-color: #066330;
-        //     font-family: "Righteous";
-        //     text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
-        //     text-decoration: none;
-        //     padding: 1.4rem 0.6rem;
-        //     border-radius: 50%;
-        //     border: 2px solid #FAAF18;
-        //     z-index: 999; // Assurez-vous que le bouton reste au-dessus des autres éléments
-        //     // &focus{
-        //     //     outline: none;
-        //     // }
-        // }
-        // .btn-logout.sticky {
-        //     position: fixed;
-        //     transform: translate(-96%, -30%); // Centrage du bouton sur son propre axe
-        // } 
-        .container-about{
-            width: 8%;
-            height: 12vh;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            background-color: transparent;
-            @media(max-width: 992px){
-                height: 15vh;
-            }
-            @media(max-width: 768px){
-                height: 10vh;
-                width: 40vw;
-                justify-content: flex-end;
-            }
-
-            .btn-about{
-                font-family: "Insanibu";
-                font-size: 1rem;
-                text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
-                text-decoration: none;
-                color: #EE1D23;
-                background-color: rgba($color: #FAAF18, $alpha: 0.8);
-                border-radius: 3px;
-                border: 1px solid white;
-                padding: 1.2rem 0.5rem;
-                border-radius: 50%;
-                @media screen and (max-width: 995px){
-                    font-size: 0.8rem;
-                }               
-            }
-            .btn-about:hover{
-                background-color: rgba($color: #066330, $alpha: 0.8);
-                transition: all 500ms ease-in-out;
-            }
-        }
-
-        .container-btn-register{
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            width: 10%;
-            height: 20vh;
+      .login {
+        cursor: pointer;
+        text-decoration: none;
+        line-height: 0px;
+        .push {
+          padding: 1rem 1rem;
+          border-radius: 50%;
+          border: 1px solid white;
+          text-align: center;
+          background-color: rgba(#faaf18, $alpha: 0.8);
+          box-shadow: 2px 2px 5px #066330;
+          h2 {
+            color: #ee1d23;
+            font-weight: bolder;
+            font-size: 1.4rem;
+            text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white,
+              0 0 4px white;
             font-family: "Insanibu";
-            color: #EE1D23;
-            background-color: transparent;
-            @media(max-width: 992px){
-                height: 25vh;
+          }
+          p {
+            color: white;
+            font-weight: bold;
+            font-family: "Righteous";
+            white-space: nowrap;
+            text-align: center;
+            &:hover {
+              color: #faaf18;
             }
-            @media(max-width: 768px){
-                height: 10vh;
-                width: 32vw;
-            }
-
-            .login{
-
-                cursor: pointer;
-                text-decoration: none;
-                line-height: 0px;
-                .push{    
-                    padding: 1rem 1rem;
-                    border-radius: 50%;
-                    border: 1px solid white;
-                    text-align: center;
-                    background-color: rgba(#FAAF18, $alpha: 0.8);
-                    box-shadow: 2px 2px 5px #066330;
-                    h2{
-                        color: #ee1d23;
-                        font-weight: bolder;
-                        font-size: 1.4rem;
-                        text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
-                        font-family: "Insanibu";
-                    }
-                    p{
-                        color: white;
-                        font-weight: bold;
-                        font-family: "Righteous";
-                        white-space: nowrap;
-                        text-align: center;
-                        &:hover{
-                            color: #FAAF18;
-                        }
-                    }
-                }
-                .push:hover{
-                    box-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
-                    background-color: rgba(#066330, $alpha: 0.8);
-                    transition: all 500ms ease-in-out;
-                }
-
-            }
-
-            .signup{
-                background-color: transparent;
-                text-decoration: none;
-
-                p{
-                    cursor: pointer;
-                    color: #ee1d23;
-                    font-weight: bolder;
-                    font-size: 1rem;
-                    text-shadow:0 0 3px white, 2px 2px 5px #FAAF18;
-                    color: #066330;
-                    font-weight: bold;
-                    font-family: "Righteous";
-                    white-space: nowrap;
-                    text-align: center;
-                    font-family: "Insanibu";
-                    text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
-                }
-                p:hover{
-                    text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
-                    color: #FAAF18;
-                    transition: all 500ms ease-in-out;
-                }
-            }
-            .username{
-                height: 60%;
-                line-height: 4px;
-                text-align: center;
-                p:last-child{
-                    font-size: 0.8rem;
-                    color: #066330;
-                    font-family: "Righteous";
-                    text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
-                }          
-            }
+          }
         }
+        .push:hover {
+          box-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white, 0 0 4px white;
+          background-color: rgba(#066330, $alpha: 0.8);
+          transition: all 500ms ease-in-out;
+        }
+      }
+
+      .signup {
+        background-color: transparent;
+        text-decoration: none;
+
+        p {
+          cursor: pointer;
+          color: #ee1d23;
+          font-weight: bolder;
+          font-size: 1rem;
+          text-shadow: 0 0 3px white, 2px 2px 5px #faaf18;
+          color: #066330;
+          font-weight: bold;
+          font-family: "Righteous";
+          white-space: nowrap;
+          text-align: center;
+          font-family: "Insanibu";
+          text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white,
+            0 0 4px white;
+        }
+        p:hover {
+          text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white,
+            0 0 4px white;
+          color: #faaf18;
+          transition: all 500ms ease-in-out;
+        }
+      }
+      .username {
+        height: 60%;
+        line-height: 4px;
+        text-align: center;
+        .image-user-connect {
+          width: 6vw;
+          margin-bottom: 2vh;
+        }
+        p:last-child {
+          font-size: 0.8rem;
+          color: #066330;
+          font-family: "Righteous";
+          text-shadow: 0 0 1px white, 0 0 2px white, 0 0 3px white,
+            0 0 4px white;
+        }
+      }
     }
+  }
 }

@@ -1,100 +1,99 @@
 @font-face {
-    font-family: "Righteous";
-    src: url("../../../../../public/fonts/Righteous-Regular.ttf");
+  font-family: "Righteous";
+  src: url("../../../../../public/fonts/Righteous-Regular.ttf");
 }
 
-.component-profil{
-    height: 100vh;
-    @media screen and (max-width: 995px) {
-        height: auto;
-    }
-    main{
-        section{
-            width: 100vw;
-            height: 70vh;
-            display: flex;
-            align-items: center;
-            .usernav{
-                width: 35vw;
-                height: 40vh;
-                display: flex;
-                flex-direction: column;                
-                align-items: center;
-                justify-content: space-evenly;
-                h3{
-                    color: #066330;
-                    font-family: "Righteous";
-                }
-                
-                .btn-taster{
-                    display: flex;
-                    justify-content: center;
-                    align-items: center;
-                    width: 14vw;
-                    height: 6vh;
-                    border-radius: 10px;
-                    border: 1px solid white;
-                    box-shadow: 1px 1px 5px #066330;
-                    background-color: #F2B705;
-                    color: white;
-                    text-decoration: none;
-                    font-size: 0.9rem;
-                    font-weight: bold;
-                    cursor: pointer;
-                    transition: 0.5s;
-                    &:hover{
-                        background-color: #066330;
-                        box-shadow: 1px 1px 5px #F2B705;
-                        color: #F2B705;
-                        transform: scale(1.05);
-                    }
-                }
-            }
-            .container-profil{
-                width: 65vw;
-                height: 60vh;
-                display: flex;
-                align-items: center;
-                // justify-content: space-evenly;
-                border-radius: 20px;
-                .profil{
-                    position: relative;
-                    display: flex;
-                    width: 18vw;
-                    height: 36vh;
-                    margin-right: 8vw;
-                    img{
-                        width: 18vw;
-                        height: 36vh;
-                        border-radius: 5px;
-                        border: 2px solid #066330;}
-                    }
-                    input{
-                        position: absolute;
-                        color: transparent;
-                        text-align: center;
-                        left: 0;
-                        bottom: 0;    
-                    }
-                    
-                }
-                .description{
-                    display: flex;
-                    flex-direction: column;
-                    align-items: center;
-                    justify-content: center;                  
-                    width: 25vw;
-                    height: 36vh;
-                    border: 2px solid #066330;
-                    border-radius: 5px;
-                    background-color: #FBF3E4;
-                    h2{
-                        color: #066330;
-                        text-transform: uppercase;
-                        font-family: "Righteous";
-                    }
-            }
-            
+.component-profil {
+  height: 100vh;
+  @media screen and (max-width: 995px) {
+    height: auto;
+  }
+  main {
+    section {
+      width: 100vw;
+      height: 70vh;
+      display: flex;
+      align-items: center;
+      .usernav {
+        width: 35vw;
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-evenly;
+        h3 {
+          color: #066330;
+          font-family: "Righteous";
         }
-    }    
+
+        .btn-taster {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          width: 14vw;
+          height: 6vh;
+          border-radius: 10px;
+          border: 1px solid white;
+          box-shadow: 1px 1px 5px #066330;
+          background-color: #f2b705;
+          color: white;
+          text-decoration: none;
+          font-size: 0.9rem;
+          font-weight: bold;
+          cursor: pointer;
+          transition: 0.5s;
+          &:hover {
+            background-color: #066330;
+            box-shadow: 1px 1px 5px #f2b705;
+            color: #f2b705;
+            transform: scale(1.05);
+          }
+        }
+      }
+      .container-profil {
+        width: 65vw;
+        height: 60vh;
+        display: flex;
+        align-items: center;
+        // justify-content: space-evenly;
+        border-radius: 20px;
+        .profil {
+          position: relative;
+          display: flex;
+          width: 18vw;
+          height: 36vh;
+          margin-right: 8vw;
+          img {
+            width: 18vw;
+            height: 36vh;
+            border-radius: 5px;
+            border: 2px solid #066330;
+          }
+        }
+        input {
+          position: absolute;
+          color: transparent;
+          text-align: center;
+          left: 0;
+          bottom: 0;
+        }
+      }
+      .description {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 25vw;
+        height: 36vh;
+        border: 2px solid #066330;
+        border-radius: 5px;
+        background-color: #fbf3e4;
+        h2 {
+          color: #066330;
+          text-transform: uppercase;
+          font-family: "Righteous";
+        }
+      }
+    }
+  }
 }

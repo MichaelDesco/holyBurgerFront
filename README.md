@@ -15,7 +15,7 @@ Installer Sass
     -écrire npm i sass
     -ouvrir votre projet avec vs code
     -ouvrir le fichier package.json
-    -ajouter la ligne a la suite dans script 
+    -ajouter la ligne a la suite dans script
         "sass": "sass -w assets/scss:assets/css"
     -creer dans le dossier src un dossier css et un dossier scss avec un fichier style.scss
     -sur le terminal écrire npm run sass

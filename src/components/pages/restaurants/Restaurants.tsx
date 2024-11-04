@@ -1,15 +1,27 @@
+// Restaurants.tsx
 import React, { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { Helmet } from 'react-helmet';
-import Header from "../../layout/header/Header";
-import Footer from "../../layout/footer/Footer";
+import Footer from "../../layout/footer/Footer.tsx";
+import Header from "../../layout/header/Header.tsx";
+import SearchBar from "../../layout/search-bar/SearchBar.tsx";
 import "./restaurants.scss";
 
 const Restaurants = () => {
-  const [restaurants, setRestaurants] = useState([]);
+  const [restaurants, setRestaurants] = useState([]); // Stocker les résultats des restaurants
+  const [searchTerm, setSearchTerm] = useState(""); // Stocker la chaîne de recherche
+
+  const handleSearch = (searchTerm: string) => {
+    setSearchTerm(searchTerm);
+  };
 
   useEffect(() => {
-    fetch("http://localhost:5001/api/restaurants", {
+    let apiUrl = "http://localhost:5001/api/restaurants";
+    if (searchTerm) {
+      apiUrl += `?search=${encodeURIComponent(searchTerm)}`;
+    }
+
+    fetch(apiUrl, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -17,10 +29,12 @@ const Restaurants = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("Données reçues de l'API :", data);
         setRestaurants(data.data);
-      });
-  }, []);
+      })
+      .catch((error) =>
+        console.error("Erreur lors de la récupération des restaurants :", error)
+      );
+  }, [searchTerm]);
 
   return (
     <>
@@ -28,6 +42,10 @@ const Restaurants = () => {
         <title>HOLY·Restaurants</title>
       </Helmet>
       <Header />
+      <SearchBar
+        onSearch={handleSearch}
+        placeholder="Rechercher un restaurant"
+      />
       <div className="restaurants-container">
         {restaurants && restaurants.length > 0 ? (
           restaurants.map((restaurant) => (
@@ -46,7 +64,6 @@ const Restaurants = () => {
                   >
                     Voir les burgers
                   </Link>
-
                 </div>
                 <div className="description">
                   <h4>Adresse</h4>

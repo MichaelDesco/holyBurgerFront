@@ -1,38 +1,44 @@
-import React, { useState } from 'react';
-import { Rating } from 'react-simple-star-rating';
+import React, { FormEvent, useState } from 'react';
 import { useNavigate } from "react-router";
+import { Rating } from 'react-simple-star-rating';
 
-const Stars = ({ burgerId, restaurantId, submitReview }) => {
+interface StarsProps {
+    burgerId: number;
+    restaurantId: number;
+    submitReview: () => void;
+}
+
+const Stars: React.FC<StarsProps> = ({ burgerId, restaurantId, submitReview }) => {
     const navigate = useNavigate();
-    const token = localStorage.getItem("jwt");
-    const [rating, setRating] = useState(0); // initial rating value
+    const token = localStorage.getItem("jwt") || '';
+    const [rating, setRating] = useState<number>(0); // initial rating value
 
-    const handleRating = (rate) => {
-        console.log("New rating:", rate); // Log du nouveau rating
+    const handleRating = (rate: number) => {
+        console.log("New rating:", rate);
         setRating(rate);
     }
 
-    const handleSubmit = (e) => {
+    const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault();
-        const formData = new FormData(e.target);
-        const content = formData.get("content");
-        const rating = formData.get("ratingValue");
-    
-        console.log("Content:", content); // Log du contenu
-        console.log("Rating:", rating); // Log du rating
-        console.log("Burger ID:", burgerId); // Log de l'ID du burger
-        console.log("User ID:", localStorage.getItem("id")); // Log de l'ID de l'utilisateur
-        console.log("Restaurant ID:", restaurantId); // Log de l'ID du restaurant
-    
+        const formData = new FormData(e.currentTarget);
+        const content = formData.get("content") as string;
+        const ratingValue = formData.get("ratingValue") as string;
+
+        console.log("Content:", content);
+        console.log("Rating:", ratingValue);
+        console.log("Burger ID:", burgerId);
+        console.log("User ID:", localStorage.getItem("id"));
+        console.log("Restaurant ID:", restaurantId);
+
         fetch("http://localhost:5001/api/reviews", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
-                "Authorization": `Bearer ${token}  ${localStorage.getItem("roles")}`,
+                "Authorization": `Bearer ${token} ${localStorage.getItem("roles")}`,
             },
             body: JSON.stringify({
                 content,
-                rating,
+                rating: ratingValue,
                 burgerId,
                 userId: localStorage.getItem("id"),
                 restaurantId,
@@ -40,27 +46,26 @@ const Stars = ({ burgerId, restaurantId, submitReview }) => {
         })
         .then((response) => response.json())
         .then((data) => {
-            console.log("Response data:", data); // Log des données de réponse
+            console.log("Response data:", data);
             navigate("/burgers");
         })
         .then(submitReview) // Appel de la fonction submitReview après avoir traité la réponse
         .catch((error) => console.log(error));
     };
-    
 
     return (
         <>
             <form onSubmit={handleSubmit}>
-                <label >
+                <label>
                     <input className='textarea' type='text' name="content" />
                     <div className="review-send">
-                        <input type="hidden" name="ratingValue" value={rating} />
+                        <input type="hidden" name="ratingValue" value={rating.toString()} />
                         <Rating
                             name='rating'
                             onClick={handleRating}
                             ratingValue={rating}
                             showTooltip
-                            tooltipDefaultText='note le burger'
+                            tooltipDefaultText='Note le burger'
                         />
                         <button type="submit">Envoyer</button>
                     </div>

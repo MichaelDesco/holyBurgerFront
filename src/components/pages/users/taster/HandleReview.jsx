@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { Helmet } from 'react-helmet';
 import { Rating } from 'react-simple-star-rating';
 import "./handle-review.scss";
-import Header from "../../../layout/header/Header";
-import Footer from "../../../layout/footer/Footer";
+import Header from "../../../layout/header/Header.tsx";
+import Footer from "../../../layout/footer/Footer.tsx";
 
 const HandleReview = () => {
     const userId = localStorage.getItem("id");

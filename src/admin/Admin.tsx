@@ -1,8 +1,8 @@
-import HeaderAdmin from './HeaderAdmin';
-import { Helmet } from 'react-helmet';
+import React from "react";
+import HeaderAdmin from "./HeaderAdmin.tsx";
+import { Helmet } from "react-helmet";
 
-const Admin = () => {
-
+const Admin: React.FC = () => {
   return (
     <div className="container-admin">
       <Helmet>
@@ -14,4 +14,3 @@ const Admin = () => {
 };
 
 export default Admin;
-

@@ -1,107 +1,107 @@
 .container-admin {
-    min-height: 100vh;
-  
-    .nav-custom {
-      h1 {
-        color: #066330;
-        font-size: 2rem;
-        font-weight: bold;
-      }
-  
-      a {
-        color: #faaf18;
-        font-size: 1.5rem;
-        font-weight: bolder;
-        text-shadow: #fff 0 0 1px, #fff 0 0 2px, #fff 0 0 3px, #fff 0 0 4px;
-      }
-  
-      .exit {
-        color: #ee1d23;
-      }
+  min-height: 100vh;
+
+  .nav-custom {
+    h1 {
+      color: #066330;
+      font-size: 2rem;
+      font-weight: bold;
     }
-  
-    section {
-      .container-card {
-        .card {
-          img {
-            object-fit: cover;
-          }
-  
-          .card-link {
-            text-decoration: underline;
-            color: #faaf18;
-            font-weight: bold;
-            font-size: 1.3rem;
-            border: none;
-            background-color: transparent;
-          }
-  
-          .delete {
-            color: #ee1d23;
-          }
+
+    a {
+      color: #faaf18;
+      font-size: 1.5rem;
+      font-weight: bolder;
+      text-shadow: #fff 0 0 1px, #fff 0 0 2px, #fff 0 0 3px, #fff 0 0 4px;
+    }
+
+    .exit {
+      color: #ee1d23;
+    }
+  }
+  p{
+    margin-bottom: 0;
+  }
+
+  section {
+    .container-card {
+      .card {
+        img {
+          object-fit: cover;
+          height: 32vh;
+        }
+
+        .card-link {
+          text-decoration: underline;
+          color: #faaf18;
+          font-weight: bold;
+          font-size: 1.3rem;
+          border: none;
+          background-color: transparent;
+        }
+
+        .delete {
+          color: #ee1d23;
         }
       }
     }
-  
-    .confirmation-dialog {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0);
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      z-index: 9999;
-    }
-  
-    .confirmation-dialog-content {
-      background-color: #fff;
-      padding: 20px;
-      border-radius: 4px;
-      text-align: center;
-    }
-  
-    .confirmation-dialog-content h3 {
-      margin-top: 0;
-    }
-  
-    .confirmation-dialog-content p {
-      margin-bottom: 20px;
-    }
-  
-    .confirmation-buttons {
-      display: flex;
-      justify-content: center;
-    }
-  
-    .confirm-button,
-    .cancel-button {
-      margin-right: 10px;
-      padding: 8px 16px;
-      border-radius: 4px;
-      font-size: 14px;
-      cursor: pointer;
-    }
-  
-    .confirm-button {
-      background-color: #dc3545;
-      color: #fff;
-    }
-  
-    .cancel-button {
-      background-color: #6c757d;
-      color: #fff;
-    }
   }
-  
 
+  .confirmation-dialog {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+  }
 
+  .confirmation-dialog-content {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 4px;
+    text-align: center;
+  }
 
+  .confirmation-dialog-content h3 {
+    margin-top: 0;
+  }
+
+  .confirmation-dialog-content p {
+    margin-bottom: 20px;
+  }
+
+  .confirmation-buttons {
+    display: flex;
+    justify-content: center;
+  }
+
+  .confirm-button,
+  .cancel-button {
+    margin-right: 10px;
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .confirm-button {
+    background-color: #dc3545;
+    color: #fff;
+  }
+
+  .cancel-button {
+    background-color: #6c757d;
+    color: #fff;
+  }
+}
 
 // .container{
-//     min-height: 100vh; 
+//     min-height: 100vh;
 //     .nav-custom{
 //         h1{
 //             color: #066330;
@@ -114,10 +114,10 @@
 //         }
 //         .exit{
 //             color: #ee1d23;
-//         }    
+//         }
 //     }
 //     section{
-    
+
 //         .container-card {
 //             .card{
 //                 img{
@@ -138,4 +138,3 @@
 //         }
 //     }
 // }
-
